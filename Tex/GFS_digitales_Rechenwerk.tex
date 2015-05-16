@@ -1,0 +1,245 @@
+\documentclass[a4paper,12pt,fleqn,oneside]{article}
+\usepackage{etex}
+\usepackage[utf8]{inputenc}
+\usepackage{ae,aecompl}
+\usepackage[T1]{fontenc}
+\usepackage{ngerman}
+\usepackage{fleqn}
+\usepackage{ulem}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{pictex}
+\usepackage[left=2.5cm,right=2.5cm,top=2cm,bottom=2cm,includeheadfoot]{geometry}
+\usepackage[section]{placeins}
+\usepackage{xspace}
+\usepackage{multirow}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{esvect}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{fixltx2e }
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyfoot[C]{Seite \thepage{} von \pageref{LastPage}}
+\linespread{1.5}
+\author{Dominik Eisele}
+\title{Dokumentation zur GFS "`Digitales Rechenwerk"'}
+\date{\today}
+
+\Huge
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} 
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} 
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+
+\setlength{\tabcolsep}{0pt}
+\renewcommand{\arraystretch}{1}
+
+\renewcommand*\contentsname{Gliederung}
+
+\let\oldsqrt\sqrt 
+\def\sqrt{\mathpalette\DHLhksqrt}
+\def\DHLhksqrt#1#2{\setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
+\advance\dimen0-0.3\ht0
+\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}
+{\box0\lower0.4pt\box2}}
+
+\begin{document}
+\normalem
+
+
+
+\begin{titlepage}
+	\maketitle
+
+\end{titlepage}
+	\tableofcontents
+
+\newpage
+
+
+   \section{Rechnen mit dualen Zahlen}
+	\subsection{Addition von Dualzahlen}
+		Die Addition von Dualzahlen verläuft im Prinzip wie die Addition von Dezimalzahlen, sobald die Addition an einem 					Stellenwert den maximalen Stellenwert übersteigt erfolgt ein Übertrag auf die nächste Stelle.\\
+		Rechenregeln:
+		\[ \begin{array}{rcll}
+   				 0 + 0 & = & 0													\\
+  			         0 + 1 & = & 1													\\
+    				 1 + 1 & = & 0$ (+ 1 Übertrag)$										\\
+    			   1 + 1 + 1 & = & 1$ (+ 1 Übertrag)$
+		\end{array} \]
+		Beispiel:
+		\[ \begin{array}{lrcll}
+   					&		 	       	 1 1 1 0 1 0 0 1 0 		 	 & = & 466 		\\
+  			       	$+ $ &				 0 0 1 1 1 0 1 0 0			 & = & 116		\\
+  			       	$Ü $ &      			      1 1 1 1 1 1$ $$ $$ $$ $$ $$ $         				\\            
+    					&	\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_							\\
+    			   		&			      1 0 0 1 0 0 0 1 1 0			 & = & 582
+		\end{array} \]
+		
+\newpage
+  
+	\subsection{Subtraktion von Dualzahlen}
+  			Bei der Subtraktion von Dualzahlen gelten die gleichen Rechenregeln, wie bei der Subtraktion von Dezimalzahlen.\\
+  			Rechenregeln:
+			\[ \begin{array}{rcll}
+   				 0 - 0 & = & 0													\\
+  			         0 - 1 & = & 1$ (+ 1 Entlehnung)$									\\			
+    				 1 - 0 & = & 1													\\
+				 1 - 1 & = & 0													\\
+    			    0 - 1 - 1 & = & 0$ (+ 1 Entlehnung)$									\\
+    			    1 - 1 - 1 & = & 1$ (+ 1 Entlehnung)$
+			\end{array} \]
+			Beispiel:
+			\[ \begin{array}{lrcll}
+   					&		 	       	 1 1 1 0 1 0 0 1 0 		& = & 466 			\\
+  			       	$- $ &				 0 0 1 1 1 0 1 0 0 		& = & 116				\\
+  			       	$E $ &      			            1 1 1 1 1$ $$ $$ $$ $        	 				\\            
+    					&	\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_							\\
+    			   		&			      	  1 0 1 0 1 1 1 1 0		 & = & 350
+			\end{array} \]
+			
+\newpage
+	
+	\subsection{Subtraktion mit dem Zweierkomplement}	
+		Da, in der Digitaltechnik, für die Subtraktion von Dualzahlen keine logische Verknüpfung existiert, ist man gezwungen eine 				Subtraktion in eine Addition umwandeln. 
+		\[ \begin{array}{rcl}
+   				 2 - 6       & = & (-4)			\\
+  			         2 + (-6)   & = & (-4)	
+		\end{array} \]
+		\vspace{\baselineskip}
+		Diese Umwandlung geschieht mit Hilfe des Zweierkomplements. Es wird gebildete in dem man den Subtrahend auf die volle 		Stellenzahl erweitert (Nullen nach links auffüllen). Hierbei muss die Breite der Komplementdarstellung beider Zahlen 					berücksichtigt werden. Üblich sind 4, 8, 16, 32 und 64 Bit. Als nächstes muss der Subtrahend negiert werden, das heißt 				man lässt jedes einzelne Bit kippen. Zu dem gebildeten bitweisen Komplement muss $+ 1$ hinzuaddiert werden. Das nun 				erhaltene Zweierkomplement muss man mit dem Minuenden addieren um das Zweierkomplement-Ergebnis der eigentlichen 			Subtraktion zu erhalten. Um das nun eigentliche Ergebnis zu erhalten muss man das Ergebnis negieren und wieder $+ 1$ 				addieren. Das höchstwertigste Bit des Zweierkomplement-Ergebnisses, stellt dabei das Vorzeichen da, und wird nicht zur 				Negation verwendet. Wenn es eine 1 ist, ist das Endergebnis negativ, bei einer 0 ist es positiv. \\
+		\\
+		
+\newpage		
+		
+		Beispiel:\\
+		$ 2 - 6 =$ $ ? $ \\
+		\\
+		1. Schritt: In eine Dualzahl wandeln:\\
+		$ 2 - 6 \Rightarrow 10 - 110$\\
+		\\
+		2. Schritt: Stellen auffüllen:\\
+		$ 0010 - 0110 =$ $ ? $\\
+		\\
+		3. Schritt: Bits negieren:\\
+		$ 0110 \Rightarrow 1001$\\
+		\\
+		4. Schritt: Hinzuaddieren von 1:\\
+		$ 1001 + 0001 = 1010$\\
+		\\
+		5. Schritt: Minuend und Zweierkomplement addieren:\\
+		$ 0010 + 1010 = 1100$\\
+		\\
+		6. Schritt: Ergebnis negieren:\\
+		$ 100 \Rightarrow 011$\\
+		\\
+		7. Schritt: Hinzuaddieren von 1:\\
+		$ 011 + 001 = 100$\\
+		\\
+		8. Schritt: In eine Dezimalzahl wandeln:\\
+		$ 100 \Rightarrow 4$ ; da das höchstwertige Bit 1 ist: Endergebnis $=$ $ -4$\\
+		
+\newpage
+
+	\subsection{Multiplikation von Dualzahlen}		
+		Auch die binäre Multiplikation wird nach denselben Regeln durchgeführt, wie die dezimale Multiplikation. Dabei werden 				Produkte mit den einzelnen Stellen des Multiplikators gebildet und anschließend Stellenrichtig addiert. Gegenüber der 				dezimalen Multiplikation bringt die binäre Multiplikation Vereinfachungen mit sich. Da die Stellen des Multiplikators nur 				die Zahlenwerte Null und Eins annehmen können, muss der Multiplikand nur mit Null und Eins multipliziert werden. Bei 				der binären Multiplikaton kommen als Teiloperationen nur die Addition und Verschiebung vor.\\
+
+		Beispiel:
+			\[ \begin{array}{lrcll}
+   					&		 	       	\uline{1 0 1 1 \times 1 0 1 0}   	 				\\
+  			       		&   			            1 0 1 1 $ $$ $$ $$ $$ $$ $        	 			\\ 
+					&   			            0 0 0 0 $ $$ $$ $$ $        	 				\\ 
+					&   			            1 0 1 1 $ $$ $        	 					\\ 
+				$+ $	&   			            0 0 0 0			        	 				\\ 
+				$Ü $	&			      	    1 $ $$ $$ $$ $$ $$ $$ $$ $					\\
+					&	\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_						\\
+					&				    1101110
+			\end{array} \]
+
+			
+
+\newpage
+	
+	\section{Umsetzung in eine Digitale Rechenschaltung}
+	\subsection{Halbaddierer}
+	Ein Halbaddierer besitzt zwei Ein-, und zwei Ausgänge. An die Eingänge \emph{x} und \emph{y} werden jeweils die Ziffern 			angelegt die man addieren möchte. An dem ersten Ausgang liegt die Summe $s$ der Addition an, am zweiten Ausgang der 			Übertrag $c$.\\
+	Daraus ergibt sich die Wertetabelle \ref{tab:halbaddierer}.
+	\begin{table}[h]
+		\center
+		\begin{tabular}{c|c|c|c}
+			\ \textbf{x} \ 	& \ \textbf{y} \ 	& \ \textbf{Übertrag c} \ & \ \textbf{Summe s} \ 	 	\\ \hline
+			0 	& 0 		& 0          		& 0       			\\ \hline
+			0 	& 1 		& 0          		& 1       			\\ \hline	
+			1 	& 0		& 0          		& 1      			 \\ \hline
+			1	& 1 		& 1          		& 0      			 \\
+		\end{tabular}
+		\caption{Wertetabelle Halbddierer}
+		\label{tab:halbaddierer}
+	\end{table}
+
+	\noindent
+	In Schaltungen wird der Halbaddierer aus zwei Bauteilen zusammengesetzt, ein Exklusiv-ODER (XOR) und ein UND (AND).\\
+	Der Aufbau des Halbaddierers ist in Abbildung \ref{fig:halbaddierer} dargestellt.
+
+	\begin{figure}[h]
+		\center
+		\input skizze_halbaddierer
+		\caption{Halbaddierer}
+		\label{fig:halbaddierer}
+	\end{figure}
+
+
+\newpage
+	\subsection{Volladdierer}
+	Der Volladdierer besteht aus zwei Halbaddierern und einem ODER. Da ein Volladdierer einen zusätzlichen Eingang 					(c\textsubscript{in}) hat, kann man mit ihm den Übertrag aus einer vohergegangenen Addition mit in die Rechnung einbeziehen. 		Man kann somit mehrere Volladdierer hintereinander schalten um größere Zahlen miteinander zu addieren.\\
+	Daraus ergibt sich die Wertetabelle \ref{tab:volladdierer}.
+
+	
+	
+	\begin{table}[h]
+\center
+\begin{tabular}{c|c|c|c|c}
+\textbf{ \ x \ } & \textbf{ \ y \ } & \textbf{ \ c\textsubscript{in} \ } & \textbf{ \ c\textsubscript{out} \ } & \multicolumn{1}{l}{\textbf \ {s \ }} \\ \hline
+0          & 0          & 0            & 0             & 0                              \\ \hline
+0          & 0          & 1            & 0             & 1                              \\ \hline
+0          & 1          & 0            & 0             & 1                              \\ \hline
+0          & 1          & 1            & 1             & 0                              \\ \hline
+1          & 0          & 0            & 0             & 1                              \\ \hline
+1          & 0          & 1            & 1             & 0                              \\ \hline
+1          & 1          & 0            & 1             & 0                              \\ \hline
+1          & 1          & 1            & 1             & 1                             
+\end{tabular}
+\caption{Wertetabelle Volladdierer}
+\label{tab:volladdierer}
+\end{table}
+
+
+\begin{figure}[h]
+		\center
+		\input skizze_volladdierer
+		\caption{Volladdierer}
+		\label{fig:volladdierer}
+	\end{figure}
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
