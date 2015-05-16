@@ -113,7 +113,7 @@
   			         2 + (-6)   & = & (-4)	
 		\end{array} \]
 		\vspace{\baselineskip}
-		Diese Umwandlung geschieht mit Hilfe des Zweierkomplements. Es wird gebildete in dem man den Subtrahend auf die volle 		Stellenzahl erweitert (Nullen nach links auffüllen). Hierbei muss die Breite der Komplementdarstellung beider Zahlen 					berücksichtigt werden. Üblich sind 4, 8, 16, 32 und 64 Bit. Als nächstes muss der Subtrahend negiert werden, das heißt 				man lässt jedes einzelne Bit kippen. Zu dem gebildeten bitweisen Komplement muss $+ 1$ hinzuaddiert werden. Das nun 				erhaltene Zweierkomplement muss man mit dem Minuenden addieren um das Zweierkomplement-Ergebnis der eigentlichen 			Subtraktion zu erhalten. Um das nun eigentliche Ergebnis zu erhalten muss man das Ergebnis negieren und wieder $+ 1$ 				addieren. Das höchstwertigste Bit des Zweierkomplement-Ergebnisses, stellt dabei das Vorzeichen da, und wird nicht zur 				Negation verwendet. Wenn es eine 1 ist, ist das Endergebnis negativ, bei einer 0 ist es positiv. \\
+		Diese Umwandlung geschieht mit Hilfe des Zweierkomplements. Es wird gebildete in dem man den Subtrahend auf die volle 		Stellenzahl erweitert (Nullen nach links auffüllen). Hierbei muss die Breite der Komplementdarstellung beider Zahlen 					berücksichtigt werden. Üblich sind 4, 8, 16, 32 und 64 Bit. Als nächstes muss der Subtrahend negiert werden, das heißt 				man lässt jedes einzelne Bit kippen. Zu dem gebildeten bitweisen Komplement muss $+ 1$ hinzuaddiert werden. Das nun 				erhaltene Zweierkomplement muss man mit dem Minuenden addieren um das Zweierkomplement-Ergebnis der eigentlichen 		Subtraktion zu erhalten. Um das nun eigentliche Ergebnis zu erhalten muss man das Ergebnis negieren und wieder $+ 1$ 				addieren. Das höchstwertigste Bit des Zweierkomplement-Ergebnisses, stellt dabei das Vorzeichen da, und wird nicht zur 				Negation verwendet. Wenn es eine 1 ist, ist das Endergebnis negativ, bei einer 0 ist es positiv. \\
 		\\
 		
 \newpage		
@@ -203,24 +203,24 @@
 	
 	
 	\begin{table}[h]
-\center
-\begin{tabular}{c|c|c|c|c}
-\textbf{ \ x \ } & \textbf{ \ y \ } & \textbf{ \ c\textsubscript{in} \ } & \textbf{ \ c\textsubscript{out} \ } & \multicolumn{1}{l}{\textbf \ {s \ }} \\ \hline
-0          & 0          & 0            & 0             & 0                              \\ \hline
-0          & 0          & 1            & 0             & 1                              \\ \hline
-0          & 1          & 0            & 0             & 1                              \\ \hline
-0          & 1          & 1            & 1             & 0                              \\ \hline
-1          & 0          & 0            & 0             & 1                              \\ \hline
-1          & 0          & 1            & 1             & 0                              \\ \hline
-1          & 1          & 0            & 1             & 0                              \\ \hline
-1          & 1          & 1            & 1             & 1                             
-\end{tabular}
-\caption{Wertetabelle Volladdierer}
-\label{tab:volladdierer}
-\end{table}
+		\center
+		\begin{tabular}{c|c|c|c|c}
+		\textbf{ \ x \ } & \textbf{ \ y \ } & \textbf{ \ c\textsubscript{in} \ } & \textbf{ \ c\textsubscript{out} \ } & \multicolumn{1}{l}			{\textbf \ {s \ }} \\ \hline
+		0          & 0          & 0            & 0             & 0                              \\ \hline
+		0          & 0          & 1            & 0             & 1                              \\ \hline
+		0          & 1          & 0            & 0             & 1                              \\ \hline
+		0          & 1          & 1            & 1             & 0                              \\ \hline
+		1          & 0          & 0            & 0             & 1                              \\ \hline
+		1          & 0          & 1            & 1             & 0                              \\ \hline
+		1          & 1          & 0            & 1             & 0                              \\ \hline
+		1          & 1          & 1            & 1             & 1                             
+		\end{tabular}
+		\caption{Wertetabelle Volladdierer}
+		\label{tab:volladdierer}
+	\end{table}
 
 
-\begin{figure}[h]
+	\begin{figure}[h]
 		\center
 		\input skizze_volladdierer
 		\caption{Volladdierer}
