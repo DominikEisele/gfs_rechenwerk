@@ -167,7 +167,8 @@
 \newpage
 	
 	\section{Umsetzung in eine Digitale Rechenschaltung}
-	\subsection{Halbaddierer}
+	\subsection{Addierer}
+	\subsubsection{Halbaddierer}
 	Ein Halbaddierer besitzt zwei Ein-, und zwei Ausgänge. An die Eingänge \emph{x} und \emph{y} werden jeweils die Ziffern 			angelegt die man addieren möchte. An dem ersten Ausgang liegt die Summe $s$ der Addition an, am zweiten Ausgang der 			Übertrag $c$.\\
 	Daraus ergibt sich die Wertetabelle \ref{tab:halbaddierer}.
 	\begin{table}[h]
@@ -196,8 +197,8 @@
 
 
 \newpage
-	\subsection{Volladdierer}
-	Der Volladdierer besteht aus zwei Halbaddierern und einem ODER. Da ein Volladdierer einen zusätzlichen Eingang 					(c\textsubscript{in}) hat, kann man mit ihm den Übertrag aus einer vohergegangenen Addition mit in die Rechnung einbeziehen. 		Man kann somit mehrere Volladdierer hintereinander schalten um größere Zahlen miteinander zu addieren.\\
+	\subsubsection{Volladdierer}
+	Der Volladdierer besteht aus zwei Halbaddierern und einem ODER. Da ein Volladdierer einen zusätzlichen Eingang 					(c\textsubscript{in}) hat, kann man mit ihm den Übertrag aus einer vohergegangenen Addition mit in die Rechnung einbeziehen. 		Man kann somit mehrere Volladdierer hintereinander schalten um größere Zahlen miteinander zu addieren. Dabei verbindet 			man den Carry out Ausgang mit dem Carry in Ausgang des höherwertigen Volladierers.\\
 	Daraus ergibt sich die Wertetabelle \ref{tab:volladdierer}.
 
 	
@@ -219,6 +220,9 @@
 		\label{tab:volladdierer}
 	\end{table}
 
+	\noindent
+	In Schaltungen wird der Volladdierer aus zwei Halbaddierern und einem ODER (OR) zusammengesetzt.\\
+	Der Aufbau des Halbaddierers ist in Abbildung \ref{fig:volladdierer} dargestellt.
 
 	\begin{figure}[h]
 		\center
@@ -227,10 +231,32 @@
 		\label{fig:volladdierer}
 	\end{figure}
 
+\newpage
+
+	\subsection{Subtrahierer}
+	Beim Subtrahierer wird der Volladdierer durch einen Steuereingang erweitert. An diesem legt man für eine Addition eine $0$, 			und für eine Subtraktion eine $1$ an. Diesen Steuereingang legt man, zusammen mit dem y-Eingang, an ein Exklusiv-ODER 			(XOR). Der Ausgang dieses Exklusiv-ODERs wird an den ursprünglichen $y$ Eingang angelegt. Somit wird der $y$ Wert, bei einer 	am Steuereingang anliegenden logischen $1$ negiert. Bei dem niederwertigsten Subtrahierer muss zudem das Steuersignal auf 			den Carry in Eingang gelegt werden um die, für die Zweierkomplementrechnung benötigte, 1 zu addieren. Zu sehen ist dieser 			Aufbau in Abbildung \ref{fig:steuerbarer_volladdierer}.
+	
+	\begin{figure}[h]
+		\center
+		\input skizze_volladdierer_steuerbar
+		\caption{Volladdierer mit Steuerleitung zum Subtrahieren}
+		\label{fig:steuerbarer_volladdierer}
+	\end{figure}
 
 
 
+\newpage
+	\subsection{Rechenwerk}
+	Das in Abbildung \ref{fig:Addierwerk} gezeigte Schaltnetz besteht aus acht kaskadierten Volladdierern. Zusätzlich besitzen sie 			jeweils einen Steuereingang, mit welchem der Summand, der aus den $y$ Bestandteilen aufgebaut ist, negiert werden kann, 			sodass mit Schaltnetz auch Subtraktionen durchgeführt werden können.\\
+	Um eine Rechenoperation durchzuführen muss man die Summanden $x$ und $y$ an die Eingänge $x_1$ bis $x_n$ und $y_1$ bis 	$y_n$ anlegen. An die Steuereingänge legt man eine logische $0$ für eine Addition, und eine logische $1$ für eine Subtraktion 			an. Die Endsumme liegt an den Ausgängen $z_1$ bis $z_n$ an.
 
+
+	\begin{figure}[h]
+		\center
+		\input skizze_addierwerk
+		\caption{Steuerbares Addierwerk}
+		\label{fig:Addierwerk}
+	\end{figure}
 
 
 
