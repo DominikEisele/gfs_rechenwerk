@@ -22,6 +22,7 @@
 \usepackage{textcomp}
 \usepackage{amssymb}
 \usepackage{fixltx2e }
+\usepackage{graphicx}
 \setlength{\headheight}{15pt}
 \pagestyle{fancy}
 \fancyfoot[C]{Seite \thepage{} von \pageref{LastPage}}
@@ -50,22 +51,23 @@
 {\box0\lower0.4pt\box2}}
 
 \begin{document}
+
+
 \normalem
-
-
 
 \begin{titlepage}
 	\maketitle
-
 \end{titlepage}
+
 	\tableofcontents
 
 \newpage
 
 
-   \section{Rechnen mit dualen Zahlen}
+	\section{Rechnen mit dualen Zahlen}
 	\subsection{Addition von Dualzahlen}
-		Die Addition von Dualzahlen verläuft im Prinzip wie die Addition von Dezimalzahlen, sobald die Addition an einem 					Stellenwert den maximalen Stellenwert übersteigt erfolgt ein Übertrag auf die nächste Stelle.\\
+		Die Addition von Dualzahlen verläuft im Prinzip wie die Addition von Dezimalzahlen, sobald die Addition an einem 
+		Stellenwert den maximalen Stellenwert übersteigt erfolgt ein Übertrag auf die nächste Stelle.\\
 		Rechenregeln:
 		\[ \begin{array}{rcll}
    				 0 + 0 & = & 0													\\
@@ -85,35 +87,43 @@
 \newpage
   
 	\subsection{Subtraktion von Dualzahlen}
-  			Bei der Subtraktion von Dualzahlen gelten die gleichen Rechenregeln, wie bei der Subtraktion von Dezimalzahlen.\\
-  			Rechenregeln:
-			\[ \begin{array}{rcll}
-   				 0 - 0 & = & 0													\\
-  			         0 - 1 & = & 1$ (+ 1 Entlehnung)$									\\			
-    				 1 - 0 & = & 1													\\
-				 1 - 1 & = & 0													\\
-    			    0 - 1 - 1 & = & 0$ (+ 1 Entlehnung)$									\\
-    			    1 - 1 - 1 & = & 1$ (+ 1 Entlehnung)$
-			\end{array} \]
-			Beispiel:
-			\[ \begin{array}{lrcll}
-   					&		 	       	 1 1 1 0 1 0 0 1 0 		& = & 466 			\\
-  			       	$- $ &				 0 0 1 1 1 0 1 0 0 		& = & 116				\\
-  			       	$E $ &      			            1 1 1 1 1$ $$ $$ $$ $        	 				\\            
-    					&	\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_							\\
-    			   		&			      	  1 0 1 0 1 1 1 1 0		 & = & 350
-			\end{array} \]
+  		Bei der Subtraktion von Dualzahlen gelten die gleichen Rechenregeln, wie bei der Subtraktion von Dezimalzahlen.\\
+  		Rechenregeln:
+		\[ \begin{array}{rcll}
+   			 0 - 0 & = & 0													\\
+  		         0 - 1 & = & 1$ (+ 1 Entlehnung)$									\\			
+    			 1 - 0 & = & 1													\\
+			 1 - 1 & = & 0													\\
+    		    0 - 1 - 1 & = & 0$ (+ 1 Entlehnung)$									\\
+    		    1 - 1 - 1 & = & 1$ (+ 1 Entlehnung)$
+		\end{array} \]
+		Beispiel:
+		\[ \begin{array}{lrcll}
+   				&		 	       	 1 1 1 0 1 0 0 1 0 		& = & 466 			\\
+  		       	$- $ &				 0 0 1 1 1 0 1 0 0 		& = & 116				\\
+  		       	$E $ &      			            1 1 1 1 1$ $$ $$ $$ $        	 				\\            
+    				&	\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_							\\
+    		   		&			      	  1 0 1 0 1 1 1 1 0		 & = & 350
+		\end{array} \]
 			
 \newpage
 	
 	\subsection{Subtraktion mit dem Zweierkomplement}	
-		Da, in der Digitaltechnik, für die Subtraktion von Dualzahlen keine logische Verknüpfung existiert, ist man gezwungen eine 				Subtraktion in eine Addition umwandeln. 
+		Da, in der Digitaltechnik, für die Subtraktion von Dualzahlen keine logische Verknüpfung existiert, ist man gezwungen eine 
+		Subtraktion in eine Addition umwandeln. 
 		\[ \begin{array}{rcl}
    				 2 - 6       & = & (-4)			\\
   			         2 + (-6)   & = & (-4)	
 		\end{array} \]
 		\vspace{\baselineskip}
-		Diese Umwandlung geschieht mit Hilfe des Zweierkomplements. Es wird gebildete in dem man den Subtrahend auf die volle 		Stellenzahl erweitert (Nullen nach links auffüllen). Hierbei muss die Breite der Komplementdarstellung beider Zahlen 					berücksichtigt werden. Üblich sind 4, 8, 16, 32 und 64 Bit. Als nächstes muss der Subtrahend negiert werden, das heißt 				man lässt jedes einzelne Bit kippen. Zu dem gebildeten bitweisen Komplement muss $+ 1$ hinzuaddiert werden. Das nun 				erhaltene Zweierkomplement muss man mit dem Minuenden addieren um das Zweierkomplement-Ergebnis der eigentlichen 		Subtraktion zu erhalten. Um das nun eigentliche Ergebnis zu erhalten muss man das Ergebnis negieren und wieder $+ 1$ 				addieren. Das höchstwertigste Bit des Zweierkomplement-Ergebnisses, stellt dabei das Vorzeichen da, und wird nicht zur 				Negation verwendet. Wenn es eine 1 ist, ist das Endergebnis negativ, bei einer 0 ist es positiv. \\
+		Diese Umwandlung geschieht mit Hilfe des Zweierkomplements. Es wird gebildete in dem man den Subtrahend auf die volle 
+		Stellenzahl erweitert (Nullen nach links auffüllen). Hierbei muss die Breite der Komplementdarstellung beider Zahlen 
+		berücksichtigt werden. Üblich sind 4, 8, 16, 32 und 64 Bit. Als nächstes muss der Subtrahend negiert werden, das heißt 
+		man lässt jedes einzelne Bit kippen. Zu dem gebildeten bitweisen Komplement muss $+ 1$ hinzuaddiert werden. Das nun 
+		erhaltene Zweierkomplement muss man mit dem Minuenden addieren um das Zweierkomplement-Ergebnis der eigentlichen 
+		Subtraktion zu erhalten. Um das nun eigentliche Ergebnis zu erhalten muss man das Ergebnis negieren und wieder $+ 1$ 
+		addieren. Das höchstwertigste Bit des Zweierkomplement-Ergebnisses, stellt dabei das Vorzeichen da, und wird nicht zur 
+		Negation verwendet. Wenn es eine 1 ist, ist das Endergebnis negativ, bei einer 0 ist es positiv. \\
 		\\
 		
 \newpage		
@@ -148,7 +158,11 @@
 \newpage
 
 	\subsection{Multiplikation von Dualzahlen}		
-		Auch die binäre Multiplikation wird nach denselben Regeln durchgeführt, wie die dezimale Multiplikation. Dabei werden 				Produkte mit den einzelnen Stellen des Multiplikators gebildet und anschließend Stellenrichtig addiert. Gegenüber der 				dezimalen Multiplikation bringt die binäre Multiplikation Vereinfachungen mit sich. Da die Stellen des Multiplikators nur 				die Zahlenwerte Null und Eins annehmen können, muss der Multiplikand nur mit Null und Eins multipliziert werden. Bei 				der binären Multiplikaton kommen als Teiloperationen nur die Addition und Verschiebung vor.\\
+		Auch die binäre Multiplikation wird nach denselben Regeln durchgeführt, wie die dezimale Multiplikation. Dabei werden 
+		Produkte mit den einzelnen Stellen des Multiplikators gebildet und anschließend Stellenrichtig addiert. Gegenüber der 
+		dezimalen Multiplikation bringt die binäre Multiplikation Vereinfachungen mit sich. Da die Stellen des Multiplikators nur die 
+		Zahlenwerte Null und Eins annehmen können, muss der Multiplikand nur mit Null und Eins multipliziert werden. Bei der 
+		binären Multiplikaton kommen als Teiloperationen nur die Addition und Verschiebung vor.\\
 
 		Beispiel:
 			\[ \begin{array}{lrcll}
@@ -168,95 +182,135 @@
 	
 	\section{Umsetzung in eine Digitale Rechenschaltung}
 	\subsection{Addierer}
-	\subsubsection{Halbaddierer}
-	Ein Halbaddierer besitzt zwei Ein-, und zwei Ausgänge. An die Eingänge \emph{x} und \emph{y} werden jeweils die Ziffern 			angelegt die man addieren möchte. An dem ersten Ausgang liegt die Summe $s$ der Addition an, am zweiten Ausgang der 			Übertrag $c$.\\
-	Daraus ergibt sich die Wertetabelle \ref{tab:halbaddierer}.
-	\begin{table}[h]
-		\center
-		\begin{tabular}{c|c|c|c}
-			\ \textbf{x} \ 	& \ \textbf{y} \ 	& \ \textbf{Übertrag c} \ & \ \textbf{Summe s} \ 	 	\\ \hline
-			0 	& 0 		& 0          		& 0       			\\ \hline
-			0 	& 1 		& 0          		& 1       			\\ \hline	
-			1 	& 0		& 0          		& 1      			 \\ \hline
-			1	& 1 		& 1          		& 0      			 \\
-		\end{tabular}
-		\caption{Wertetabelle Halbddierer}
-		\label{tab:halbaddierer}
-	\end{table}
+		\subsubsection{Halbaddierer}
+		Ein Halbaddierer besitzt zwei Ein-, und zwei Ausgänge. An die Eingänge \emph{x} und \emph{y} werden jeweils die Ziffern 
+		angelegt die man addieren möchte. An dem ersten Ausgang liegt die Summe $s$ der Addition an, am zweiten Ausgang der Übertrag $c$.\\
+		Daraus ergibt sich die Wertetabelle \ref{tab:halbaddierer}.
+		\begin{table}[h]
+			\center
+			\begin{tabular}{c|c|c|c}
+				\ \textbf{x} \ 	& \ \textbf{y} \ 	& \ \textbf{Übertrag c} \ & \ \textbf{Summe s} \ 	 	\\ \hline	
+				0 	& 0 		& 0          		& 0       			\\ \hline
+				0 	& 1 		& 0          		& 1       			\\ \hline	
+				1 	& 0		& 0          		& 1      			 \\ \hline
+				1	& 1 		& 1          		& 0      			 \\
+			\end{tabular}
+			\caption{Wertetabelle Halbddierer}
+			\label{tab:halbaddierer}
+		\end{table}
 
-	\noindent
-	In Schaltungen wird der Halbaddierer aus zwei Bauteilen zusammengesetzt, ein Exklusiv-ODER (XOR) und ein UND (AND).\\
-	Der Aufbau des Halbaddierers ist in Abbildung \ref{fig:halbaddierer} dargestellt.
+		\noindent
+		In Schaltungen wird der Halbaddierer aus zwei Bauteilen zusammengesetzt, ein Exklusiv-ODER (XOR) und ein UND (AND).\\
+		Der Aufbau des Halbaddierers ist in Abbildung \ref{fig:halbaddierer} dargestellt.
 
-	\begin{figure}[h]
-		\center
-		\input skizze_halbaddierer
-		\caption{Halbaddierer}
-		\label{fig:halbaddierer}
-	\end{figure}
+		\begin{figure}[h]
+			\center
+			\input skizze_halbaddierer
+			\caption{Halbaddierer}
+			\label{fig:halbaddierer}
+		\end{figure}
 
 
 \newpage
+	
 	\subsubsection{Volladdierer}
-	Der Volladdierer besteht aus zwei Halbaddierern und einem ODER. Da ein Volladdierer einen zusätzlichen Eingang 					(c\textsubscript{in}) hat, kann man mit ihm den Übertrag aus einer vohergegangenen Addition mit in die Rechnung einbeziehen. 		Man kann somit mehrere Volladdierer hintereinander schalten um größere Zahlen miteinander zu addieren. Dabei verbindet 			man den Carry out Ausgang mit dem Carry in Ausgang des höherwertigen Volladierers.\\
-	Daraus ergibt sich die Wertetabelle \ref{tab:volladdierer}.
+		Der Volladdierer besteht aus zwei Halbaddierern und einem ODER. Da ein Volladdierer einen zusätzlichen Eingang 
+		(c\textsubscript{in}) hat, kann man mit ihm den Übertrag aus einer vohergegangenen Addition mit in die Rechnung 
+		einbeziehen. Man kann somit mehrere Volladdierer hintereinander schalten um größere Zahlen miteinander zu addieren. 
+		Dabei verbindet man den Carry out Ausgang mit dem Carry in Ausgang des höherwertigen Volladierers.\\
+		Daraus ergibt sich die Wertetabelle \ref{tab:volladdierer}.
 
 	
 	
-	\begin{table}[h]
-		\center
-		\begin{tabular}{c|c|c|c|c}
-		\textbf{ \ x \ } & \textbf{ \ y \ } & \textbf{ \ c\textsubscript{in} \ } & \textbf{ \ c\textsubscript{out} \ } & \multicolumn{1}{l}			{\textbf \ {s \ }} \\ \hline
-		0          & 0          & 0            & 0             & 0                              \\ \hline
-		0          & 0          & 1            & 0             & 1                              \\ \hline
-		0          & 1          & 0            & 0             & 1                              \\ \hline
-		0          & 1          & 1            & 1             & 0                              \\ \hline
-		1          & 0          & 0            & 0             & 1                              \\ \hline
-		1          & 0          & 1            & 1             & 0                              \\ \hline
-		1          & 1          & 0            & 1             & 0                              \\ \hline
-		1          & 1          & 1            & 1             & 1                             
-		\end{tabular}
-		\caption{Wertetabelle Volladdierer}
-		\label{tab:volladdierer}
-	\end{table}
+		\begin{table}[h]
+			\center
+			\begin{tabular}{c|c|c|c|c}
+			\textbf{ \ x \ } & \textbf{ \ y \ } & \textbf{ \ c\textsubscript{in} \ } & \textbf{ \ c\textsubscript{out} \ } & \multicolumn{1}{l} {\textbf \ {s \ }} \\ \hline
+			0          & 0          & 0            & 0             & 0                              \\ \hline
+			0          & 0          & 1            & 0             & 1                              \\ \hline
+			0          & 1          & 0            & 0             & 1                              \\ \hline
+			0          & 1          & 1            & 1             & 0                              \\ \hline
+			1          & 0          & 0            & 0             & 1                              \\ \hline
+			1          & 0          & 1            & 1             & 0                              \\ \hline
+			1          & 1          & 0            & 1             & 0                              \\ \hline
+			1          & 1          & 1            & 1             & 1                             
+			\end{tabular}
+			\caption{Wertetabelle Volladdierer}
+			\label{tab:volladdierer}
+		\end{table}
 
-	\noindent
-	In Schaltungen wird der Volladdierer aus zwei Halbaddierern und einem ODER (OR) zusammengesetzt.\\
-	Der Aufbau des Halbaddierers ist in Abbildung \ref{fig:volladdierer} dargestellt.
+		\noindent
+		In Schaltungen wird der Volladdierer aus zwei Halbaddierern und einem ODER (OR) zusammengesetzt.\\
+		Der Aufbau des Halbaddierers ist in Abbildung \ref{fig:volladdierer} dargestellt.
 
-	\begin{figure}[h]
-		\center
-		\input skizze_volladdierer
-		\caption{Volladdierer}
-		\label{fig:volladdierer}
-	\end{figure}
+		\begin{figure}[h]
+			\center
+			\input skizze_volladdierer
+			\caption{Volladdierer}
+			\label{fig:volladdierer}
+		\end{figure}
 
 \newpage
 
 	\subsection{Subtrahierer}
-	Beim Subtrahierer wird der Volladdierer durch einen Steuereingang erweitert. An diesem legt man für eine Addition eine $0$, 			und für eine Subtraktion eine $1$ an. Diesen Steuereingang legt man, zusammen mit dem y-Eingang, an ein Exklusiv-ODER 			(XOR). Der Ausgang dieses Exklusiv-ODERs wird an den ursprünglichen $y$ Eingang angelegt. Somit wird der $y$ Wert, bei einer 	am Steuereingang anliegenden logischen $1$ negiert. Bei dem niederwertigsten Subtrahierer muss zudem das Steuersignal auf 			den Carry in Eingang gelegt werden um die, für die Zweierkomplementrechnung benötigte, 1 zu addieren. Zu sehen ist dieser 			Aufbau in Abbildung \ref{fig:steuerbarer_volladdierer}.
+		Beim Subtrahierer wird der Volladdierer durch einen Steuereingang erweitert. An diesem legt man für eine Addition eine 
+		$0$, und für eine Subtraktion eine $1$ an. Diesen Steuereingang legt man, zusammen mit dem y-Eingang, an ein 
+		Exklusiv-ODER (XOR). Der Ausgang dieses Exklusiv-ODERs wird an den ursprünglichen $y$ Eingang angelegt. Somit wird 
+		der $y$ Wert, bei einer am Steuereingang anliegenden logischen $1$ negiert. Bei dem niederwertigsten Subtrahierer muss 
+		zudem das Steuersignal auf den Carry in Eingang gelegt werden um die, für die Zweierkomplementrechnung benötigte, 1 
+		zu addieren. Zu sehen ist dieser Aufbau in Abbildung \ref{fig:steuerbarer_volladdierer}.
 	
-	\begin{figure}[h]
-		\center
-		\input skizze_volladdierer_steuerbar
-		\caption{Volladdierer mit Steuerleitung zum Subtrahieren}
-		\label{fig:steuerbarer_volladdierer}
-	\end{figure}
+		\begin{figure}[h]
+			\center
+			\input skizze_volladdierer_steuerbar
+			\caption{Volladdierer mit Steuerleitung zum Subtrahieren}
+			\label{fig:steuerbarer_volladdierer}
+		\end{figure}
 
 
 
 \newpage
+
 	\subsection{Rechenwerk}
-	Das in Abbildung \ref{fig:Addierwerk} gezeigte Schaltnetz besteht aus acht kaskadierten Volladdierern. Zusätzlich besitzen sie 			jeweils einen Steuereingang, mit welchem der Summand, der aus den $y$ Bestandteilen aufgebaut ist, negiert werden kann, 			sodass mit Schaltnetz auch Subtraktionen durchgeführt werden können.\\
-	Um eine Rechenoperation durchzuführen muss man die Summanden $x$ und $y$ an die Eingänge $x_1$ bis $x_n$ und $y_1$ bis 	$y_n$ anlegen. An die Steuereingänge legt man eine logische $0$ für eine Addition, und eine logische $1$ für eine Subtraktion 			an. Die Endsumme liegt an den Ausgängen $z_1$ bis $z_n$ an.
+		Das in Abbildung \ref{fig:Addierwerk} gezeigte Schaltnetz besteht aus acht kaskadierten Volladdierern. Zusätzlich besitzen 
+		sie jeweils einen Steuereingang, mit welchem der Summand, der aus den $y$ Bestandteilen aufgebaut ist, negiert werden 
+		kann, sodass mit Schaltnetz auch Subtraktionen durchgeführt werden können.\\
+		Um eine Rechenoperation durchzuführen muss man die Summanden $x$ und $y$ an die Eingänge $x_1$ bis $x_n$ und 
+		$y_1$ bis $y_n$ anlegen. An die Steuereingänge legt man eine logische $0$ für eine Addition, und eine logische $1$ für 
+		eine Subtraktion an. Die Endsumme liegt an den Ausgängen $z_1$ bis $z_n$ an.
 
 
-	\begin{figure}[h]
-		\center
-		\input skizze_addierwerk
-		\caption{Steuerbares Addierwerk}
-		\label{fig:Addierwerk}
-	\end{figure}
+		\begin{figure}[h]
+			\center
+			\input skizze_addierwerk
+			\caption{Steuerbares Addierwerk}
+			\label{fig:Addierwerk}
+		\end{figure}
+	\FloatBarrier
+
+
+
+\newpage
+
+	\subsection{Multiplizierer}
+
+		\begin{figure}[h]
+			\center
+			\includegraphics[width=0.7\textwidth]{multiplizierer}
+			\caption{Multiplizierer}
+			\label{fig:Multiplizierer}
+		\end{figure}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
