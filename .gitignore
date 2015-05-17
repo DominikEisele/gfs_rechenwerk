@@ -1,5 +1,5 @@
 *.set
-Tex/GFS_digitales_Rechenwerk.synctex.gz
+*.gz
 *.toc
 *.log
 *.aux
