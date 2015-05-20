@@ -272,7 +272,7 @@
 
 \newpage
 
-	\subsection{Rechenwerk}
+	\subsection{Addierwerk}
 		Das in Abbildung \ref{fig:Addierwerk} gezeigte Schaltnetz besteht aus acht kaskadierten Volladdierern. Zusätzlich besitzen
 		sie jeweils einen Steuereingang, mit welchem der Summand, der aus den $y$ Bestandteilen aufgebaut ist, negiert werden
 		kann, sodass mit Schaltnetz auch Subtraktionen durchgeführt werden können.\\
@@ -328,8 +328,56 @@
 			\caption{8-Bit Multiplizierer}
 			\label{fig:Multiplizierer}
 		\end{figure}
+		\FloatBarrier
+
+\newpage
+	$  $
+	\FloatBarrier
+
+\newpage
+	\subsection{BCD-Eingabe}
+		\begin{figure}[h]
+			\center
+			\includegraphics[width=0.8\textwidth]{bcd_eingabe}
+			\caption{BCD-Eingabe}
+			\label{fig:bcd_eingabe}
+		\end{figure}
+		\FloatBarrier
+		
+		\noindent
+		Die digitale Eingabe des Rechenwerks erfolgt über ein ASCII-Eingabe Feld. Dabei liegt an den Ausgängen D\textsubscript{0} 
+		bis D\textsubscript{3} die zuletzt eingegebene Ziffer im Binärcode an da, durch das weglassen der oberen vier Ziffern im 
+		ASCII-Code die Ziffern Null bis Neun automatisch im BCD-Code anliegen. Der Ausgang CLK ist dann HIGH solange eine Taste 
+		gedrückt wird. Dieser CLK Ausgang wird auf den Clock-Eingang der zwei nachfolgenden Register gelegt. Sobald eine Taste 
+		gedrückt wurde, wird die zuletzt eingegebene Ziffer, mit fallender Flanke, in das erste Register übernommen. Folgt ein 
+		weiterer Tastendruck wird, wieder mit fallender Flanke, die erste Ziffer in das zweite Register übernommen, die 
+		niederwertigere Ziffer in das erste Register übernommen. Die eingegebene Zahl kann man dann an den Registerausgängen 
+		BCD1.1 bis BCD1.8 ablesen. Um zwei Zahlen eingeben zu können, muss die Schaltung aus Abbildung \ref{fig:bcd_eingabe} 
+		doppelt vorhanden sein.
 
 
+	
+
+\newpage
+	\subsection{Umwandlung}
+		\begin{figure}[h]
+			\center
+			\includegraphics[width=1.0\textwidth]{wandler_dezimal_binaer}
+			\caption{Wandler von BCD zu Binär}
+			\label{fig:wandler_dezimal_binaer}
+		\end{figure}
+
+
+
+\newpage
+	\subsection{7-Segment Anzeige}
+		\begin{figure}[h]
+			\center
+			\includegraphics[width=0.35\textwidth]{7_segment_anzeige}
+			\caption{7-Segment Anzeige}
+			\label{fig:7_segment_anzeige}
+		\end{figure}
+		\FloatBarrier
 
 
 
