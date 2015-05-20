@@ -128,6 +128,7 @@
 
 \newpage
 
+		\noindent
 		Beispiel:\\
 		$ 2 - 6 =$ $ ? $ \\
 		\\
@@ -346,13 +347,13 @@
 		
 		\noindent
 		Die digitale Eingabe des Rechenwerks erfolgt über ein ASCII-Eingabe Feld. Dabei liegt an den Ausgängen D\textsubscript{0} 
-		bis D\textsubscript{3} die zuletzt eingegebene Ziffer im Binärcode an da, durch das weglassen der oberen vier Ziffern im 
-		ASCII-Code die Ziffern Null bis Neun automatisch im BCD-Code anliegen. Der Ausgang CLK ist dann HIGH solange eine Taste 
+		bis D\textsubscript{3} die zuletzt eingegebene Ziffer im Binärcode an da, durch das weglassen der oberen vier Bit im 
+		ASCII-Code die Ziffern null bis neun automatisch im BCD-Code anliegen. Der Ausgang CLK ist dann HIGH solange eine Taste 
 		gedrückt wird. Dieser CLK Ausgang wird auf den Clock-Eingang der zwei nachfolgenden Register gelegt. Sobald eine Taste 
 		gedrückt wurde, wird die zuletzt eingegebene Ziffer, mit fallender Flanke, in das erste Register übernommen. Folgt ein 
 		weiterer Tastendruck wird, wieder mit fallender Flanke, die erste Ziffer in das zweite Register übernommen, die 
 		niederwertigere Ziffer in das erste Register übernommen. Die eingegebene Zahl kann man dann an den Registerausgängen 
-		BCD1.1 bis BCD1.8 ablesen. Um zwei Zahlen eingeben zu können, muss die Schaltung aus Abbildung \ref{fig:bcd_eingabe} 
+		BCD1.1 bis BCD1.8 ablesen. Um zwei Operanden eingeben zu können, muss die Schaltung aus Abbildung \ref{fig:bcd_eingabe} 
 		doppelt vorhanden sein.
 
 
