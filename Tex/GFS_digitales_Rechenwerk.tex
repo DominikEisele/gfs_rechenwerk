@@ -317,10 +317,10 @@
 		Die in Abbildung \ref{fig:Steuereinheit_Multiplizierer} sichtbare Steuereinheit des 8-Bit Multiplizierers ist dafür 
 		verantwortlich, dass der Takt "`ClMult"' am Anfang er Rechenoperation gestartet, und nach acht Takten wieder gestoppt 
 		wird. Wenn D\textsubscript{0} nach einem Reset $1$ ist, wird das ladbare Schieberegister geladen. Ist zusätzlich dazu 
-		noch der Taster "`*"' gedrückt, wird der Ausgang \={Q} des  Flip-Flops  $0$, sodass der Main-Clock auch der Clock des 
-		Multiplizierers wird. Acht Takte später, wenn der Ausgang D\textsubscript{8} $1$ ist, wird der Reseteingang des Flip-Flops
-		 $1$, sodass \={Q}  wieder 1 ist und der Takt blockiert wird. So wird der Multiplizierer gestoppt, sodass das Produkt 
-		abgelesen werden kann. 
+		noch der Taster "`* "' gedrückt, wird der Ausgang \={Q} des  Flip-Flops  $0$, sodass der Main-Clock auch der Clock des 
+		Multiplizierers wird. Acht Takte später, wenn der Ausgang D\textsubscript{8} $1$ ist, wird der Reseteingang des Flip-Flops 
+		$1$, sodass \={Q}  wieder 1 ist und der Takt blockiert wird. So wird der Multiplizierer gestoppt, sodass das Produkt an den
+		Ausgängen ErBin1 bis ErBin14 abgelesen werden kann. 
 
 		\begin{figure}[h]
 			\center
