@@ -345,7 +345,7 @@
 		\end{figure}
 		\FloatBarrier
 		
-		\noindents
+		\noindent
 		Die digitale Eingabe des Rechenwerks erfolgt über ein ASCII-Eingabe Feld. Dabei liegt an den Ausgängen D\textsubscript{0} 
 		bis D\textsubscript{3} die zuletzt eingegebene Ziffer im Binärcode an da, durch das weglassen der oberen vier Bit im 
 		ASCII-Code die Ziffern null bis neun automatisch im BCD-Code anliegen. Der Ausgang CLK ist dann HIGH solange eine Taste 
@@ -367,15 +367,16 @@
 			\caption{Wandler von BCD zu Binär}
 			\label{fig:wandler_dezimal_binaer}
 		\end{figure}
-		
-	Da das Rechenwerk mit Binären Zahlen rechnet muss man die eingegebenen BCD-Zahlen in Binär-Zahlen Wandeln. Da 
+	
+	\noindent	
+	Da das Rechenwerk mit binären Zahlen rechnet muss man die eingegebenen BCD-Zahlen in Binär-Zahlen wandeln. Da 
 	die heutzutage üblicherweise Verwendete Konvertierung sehr komplex ist, habe ich für meine GFS eine simplere 
 	Methode gewählt. Diese Variante ist nur Effektiv bei kleineren Zahlenbereichen, da die Anzahl benötigter Takte 
 	genau so hoch ist, wie die Zahl selber. Bei einer Frequnez von, z.B 500Hz braucht die Wandlung der Zahl 100 nur 
 	0.2$s$, die Wandlung der Zahl 10.000 hingegen schon 20$s$. Bei dem Rechenbeispiel mit den höchstmöglichsten 
 	Operanden $(99 \cdot 99 = 9.801)$ braucht die eigentliche Rechnung nur 8 Takte, die Wandlung hingegen 9.801 
-	Takte. Bei einem angelegten Takt von 500Hz beträgt die eigentliche Rechenzeit 0,016$s$, die Wandlung hingegen
-	benötigt 19.602$s$.\\
+	Takte. Bei einem angelegten Takt von 500Hz beträgt die eigentliche Rechenzeit, der Multiplikation, 0,016$s$, die Wandlung 
+	hingegen benötigt 19.602$s$.\\
 	Für die Wandlung werden zwei Zähler und ein Vergleicher benötigt. Der erste Zähler ist dabei ein BCD-Zähler, der
 	zweite ein Binärzähler. Dabei ist es wichtig dass die beiden Zähler im gleichen Takt zählen. Der Vergleicher 
 	vergleicht das Eingabe Signal mit dem Ausgang des BCD-Zählers. Sind diese beiden Signale identisch so wird der
@@ -396,7 +397,8 @@
 		\end{figure}
 		\FloatBarrier
 		
-		
+	
+	\noindent	
 	Um das Endergebniss anzuzeigen wird es, BCD-Codiert, Ziffer für Ziffer auf die Eingänge eines 
 	7-Segment-Wandlers gelegt, seine Ausgänge gehen wiederum auf jeweils ein 7-Segment Anzeigeelement.
 
