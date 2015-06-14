@@ -16,7 +16,7 @@ Das Rechenwerk kann Zahlen von im Zahlenbereich von 0 bis 99 verarbeiten. Die Ve
 
 ## Lizenz
 
-Copyright (c) 2015, lelant
+Copyright (c) 2015, Dominik Eisele
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
