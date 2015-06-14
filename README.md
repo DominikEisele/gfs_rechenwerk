@@ -1,6 +1,6 @@
 # GFS Rechenwerk
 
-Von [Dominik Eisele](https://github.com/DominikEisele).
+Von [Dominik Eisele](https://github.com/DominikEisele)
 
 [Projekt Link](https://github.com/DominikEisele/gfs_rechenwerk)
 
