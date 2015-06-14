@@ -2,7 +2,7 @@
 
 By [Dominik Eisele](https://github.com/DominikEisele).
 
-[![Project URL](https://github.com/DominikEisele/gfs_rechenwerk)
+[Project Link](https://github.com/DominikEisele/gfs_rechenwerk)
 
 ## Description
 **GFS Rechenwerk**  Dies ist eine GFS (Gleichwertige Feststellung von Schülerleistungen) über ein digitales Rechenwerk, 
