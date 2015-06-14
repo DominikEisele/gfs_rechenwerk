@@ -1,13 +1,8 @@
 # gfs_rechenwerk
-<!-- If you'd like to use a logo instead uncomment this code and remove the text above this line
-
-  ![Logo](URL to logo img file goes here)
-
--->
 
 By [Dominik Eisele](https://github.com/DominikEisele).
 
-[![Project URL](Code Climate Badge IMG URL goes here)](https://github.com/DominikEisele/gfs_rechenwerk)
+[![Project URL](https://github.com/DominikEisele/gfs_rechenwerk)
 
 ## Description
 **GFS Rechenwerk**  Dies ist eine GFS (Gleichwertige Feststellung von Schülerleistungen) über ein digitales Rechenwerk, 
