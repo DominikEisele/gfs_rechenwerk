@@ -6,7 +6,14 @@ By [Dominik Eisele](https://github.com/DominikEisele).
 
 ## Description
 **GFS Rechenwerk**  Dies ist eine GFS (Gleichwertige Feststellung von Schülerleistungen) über ein digitales Rechenwerk, 
-                    aus einer 11. Klasse eines Technischen Gymnasiums. 
+                    aus einer 11. Klasse eines Technischen Gymnasiums. Das Rechenwerk kann Zahlen von im Zahlenbereich von 0
+                    bis 99 verarbeiten. Die Verfügbaren Rechenoperationen sind Addition, Subtraktion und Multiplikation. 
+                    Erstellt wurde das [Rechenwerk](https://github.com/DominikEisele/gfs_rechenwerk/blob/master/DigitalProfiLab/3/fertig.prj)
+                    mit der Schaltungssimulation [Digital-ProfiLab 4.0](http://www.abacom-online.de/html/digital-profilab.html).
+                    In dem Verzeichnis [TEX](https://github.com/DominikEisele/gfs_rechenwerk/tree/master/Tex) findet sich eine 
+                    [Dokumentation[(https://github.com/DominikEisele/gfs_rechenwerk/blob/master/Tex/GFS_digitales_Rechenwerk.pdf),
+                    der dazugehörige [TEX-Code](https://github.com/DominikEisele/gfs_rechenwerk/blob/master/Tex/GFS_digitales_Rechenwerk.tex) 
+                    ist ebenfalls in diese Verzeichnis zu finden.
 
 ## Authors
 
