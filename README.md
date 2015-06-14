@@ -7,7 +7,7 @@
 
 By [Dominik Eisele](https://github.com/DominikEisele).
 
-[![Code Climate](Code Climate Badge IMG URL goes here)](https://github.com/DominikEisele/gfs_rechenwerk)
+[![Project URL](Code Climate Badge IMG URL goes here)](https://github.com/DominikEisele/gfs_rechenwerk)
 
 ## Description
 **GFS Rechenwerk**  Dies ist eine GFS (Gleichwertige Feststellung von Schülerleistungen) über ein digitales Rechenwerk, 
