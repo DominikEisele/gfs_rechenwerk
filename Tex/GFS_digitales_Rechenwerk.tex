@@ -1,6 +1,6 @@
 \documentclass[a4paper,12pt,fleqn,oneside]{article}
 \usepackage{etex}
-\usepackage[utf8]{inputenc}
+\usepackage[latin9]{inputenc}
 \usepackage{ae,aecompl}
 \usepackage[T1]{fontenc}
 \usepackage{ngerman}
@@ -66,20 +66,20 @@
 
 	\section{Rechnen mit dualen Zahlen}
 	\subsection{Addition von Dualzahlen}
-		Die Addition von Dualzahlen verlÃ¤uft im Prinzip wie die Addition von Dezimalzahlen, sobald die Addition an einem
-		Stellenwert den maximalen Stellenwert Ã¼bersteigt erfolgt ein Ãœbertrag auf die nÃ¤chste Stelle.\\
+		Die Addition von Dualzahlen verläuft im Prinzip wie die Addition von Dezimalzahlen, sobald die Addition an einem
+		Stellenwert den maximalen Stellenwert übersteigt erfolgt ein Übertrag auf die nächste Stelle.\\
 		Rechenregeln:
 		\[ \begin{array}{rcll}
    				 0 + 0 & = & 0													\\
   			         0 + 1 & = & 1													\\
-    				 1 + 1 & = & 0$ (+ 1 Ãœbertrag)$										\\
-    			   1 + 1 + 1 & = & 1$ (+ 1 Ãœbertrag)$
+    				 1 + 1 & = & 0$ (+ 1 Übertrag)$										\\
+    			   1 + 1 + 1 & = & 1$ (+ 1 Übertrag)$
 		\end{array} \]
 		Beispiel:
 		\[ \begin{array}{lrcll}
    					&		 	       	 1 1 1 0 1 0 0 1 0 		 	 & = & 466 		\\
   			       	$+ $ &				 0 0 1 1 1 0 1 0 0			 & = & 116		\\
-  			       	$Ãœ $ &      			      1 1 1 1 1 1$ $$ $$ $$ $$ $$ $         				\\
+  			       	$Ü $ &      			      1 1 1 1 1 1$ $$ $$ $$ $$ $$ $         				\\
     					&	\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_							\\
     			   		&			      1 0 0 1 0 0 0 1 1 0			 & = & 582
 		\end{array} \]
@@ -109,7 +109,7 @@
 \newpage
 
 	\subsection{Subtraktion mit dem Zweierkomplement}
-		Da, in der Digitaltechnik, fÃ¼r die Subtraktion von Dualzahlen keine logische VerknÃ¼pfung existiert, ist man gezwungen eine
+		Da, in der Digitaltechnik, für die Subtraktion von Dualzahlen keine logische Verknüpfung existiert, ist man gezwungen eine
 		Subtraktion in eine Addition umwandeln.
 		\[ \begin{array}{rcl}
    				 2 - 6       & = & (-4)			\\
@@ -117,12 +117,12 @@
 		\end{array} \]
 		\vspace{\baselineskip}
 		Diese Umwandlung geschieht mit Hilfe des Zweierkomplements. Es wird gebildete in dem man den Subtrahend auf die volle
-		Stellenzahl erweitert (Nullen nach links auffÃ¼llen). Hierbei muss die Breite der Komplementdarstellung beider Zahlen
-		berÃ¼cksichtigt werden. Ãœblich sind 4, 8, 16, 32 und 64 Bit. Als nÃ¤chstes muss der Subtrahend negiert werden, das heiÃŸt
-		man lÃ¤sst jedes einzelne Bit kippen. Zu dem gebildeten bitweisen Komplement muss $+ 1$ hinzuaddiert werden. Das nun
+		Stellenzahl erweitert (Nullen nach links auffüllen). Hierbei muss die Breite der Komplementdarstellung beider Zahlen
+		berücksichtigt werden. Üblich sind 4, 8, 16, 32 und 64 Bit. Als nächstes muss der Subtrahend negiert werden, das heißt
+		man lässt jedes einzelne Bit kippen. Zu dem gebildeten bitweisen Komplement muss $+ 1$ hinzuaddiert werden. Das nun
 		erhaltene Zweierkomplement muss man mit dem Minuenden addieren um das Zweierkomplement-Ergebnis der eigentlichen
 		Subtraktion zu erhalten. Um das nun eigentliche Ergebnis zu erhalten muss man das Ergebnis negieren und wieder $+ 1$
-		addieren. Das hÃ¶chstwertigste Bit des Zweierkomplement-Ergebnisses, stellt dabei das Vorzeichen da, und wird nicht zur
+		addieren. Das höchstwertigste Bit des Zweierkomplement-Ergebnisses, stellt dabei das Vorzeichen da, und wird nicht zur
 		Negation verwendet. Wenn es eine 1 ist, ist das Endergebnis negativ, bei einer 0 ist es positiv. \\
 		\\
 
@@ -135,7 +135,7 @@
 		1. Schritt: In eine Dualzahl wandeln:\\
 		$ 2 - 6 \Rightarrow 10 - 110$\\
 		\\
-		2. Schritt: Stellen auffÃ¼llen:\\
+		2. Schritt: Stellen auffüllen:\\
 		$ 0010 - 0110 =$ $ ? $\\
 		\\
 		3. Schritt: Bits negieren:\\
@@ -154,16 +154,16 @@
 		$ 011 + 001 = 100$\\
 		\\
 		8. Schritt: In eine Dezimalzahl wandeln:\\
-		$ 100 \Rightarrow 4$ ; da das hÃ¶chstwertige Bit 1 ist: Endergebnis $=$ $ -4$\\
+		$ 100 \Rightarrow 4$ ; da das höchstwertige Bit 1 ist: Endergebnis $=$ $ -4$\\
 
 \newpage
 
 	\subsection{Multiplikation von Dualzahlen}
-		Auch die binÃ¤re Multiplikation wird nach denselben Regeln durchgefÃ¼hrt, wie die dezimale Multiplikation. Dabei werden
-		Produkte mit den einzelnen Stellen des Multiplikators gebildet und anschlieÃŸend Stellenrichtig addiert. GegenÃ¼ber der
-		dezimalen Multiplikation bringt die binÃ¤re Multiplikation Vereinfachungen mit sich. Da die Stellen des Multiplikators nur die
-		Zahlenwerte Null und Eins annehmen kÃ¶nnen, muss der Multiplikand nur mit Null und Eins multipliziert werden. Bei der
-		binÃ¤ren Multiplikaton kommen als Teiloperationen nur die Addition und Verschiebung vor.\\
+		Auch die binäre Multiplikation wird nach denselben Regeln durchgeführt, wie die dezimale Multiplikation. Dabei werden
+		Produkte mit den einzelnen Stellen des Multiplikators gebildet und anschließend Stellenrichtig addiert. Gegenüber der
+		dezimalen Multiplikation bringt die binäre Multiplikation Vereinfachungen mit sich. Da die Stellen des Multiplikators nur die
+		Zahlenwerte Null und Eins annehmen können, muss der Multiplikand nur mit Null und Eins multipliziert werden. Bei der
+		binären Multiplikaton kommen als Teiloperationen nur die Addition und Verschiebung vor.\\
 
 		Beispiel:
 			\[ \begin{array}{lrcll}
@@ -183,14 +183,14 @@
 	\section{Umsetzung in eine Digitale Rechenschaltung}
 	\subsection{Addierer}
 		\subsubsection{Halbaddierer}
-		Ein Halbaddierer besitzt zwei Ein-, und zwei AusgÃ¤nge. An die EingÃ¤nge \emph{x} und \emph{y} werden jeweils die Ziffern
-		angelegt die man addieren mÃ¶chte. An dem ersten Ausgang liegt die Summe $s$ der Addition an, am zweiten Ausgang der 
-		Ãœbertrag $c$.\\
+		Ein Halbaddierer besitzt zwei Ein-, und zwei Ausgänge. An die Eingänge \emph{x} und \emph{y} werden jeweils die Ziffern
+		angelegt die man addieren möchte. An dem ersten Ausgang liegt die Summe $s$ der Addition an, am zweiten Ausgang der 
+		Übertrag $c$.\\
 		Daraus ergibt sich die Wertetabelle \ref{tab:halbaddierer}.
 		\begin{table}[h]
 			\center
 			\begin{tabular}{c|c|c|c}
-				\ \textbf{x} \ 	& \ \textbf{y} \		& \ \textbf{Ãœbertrag c} \ & \ \textbf{Summe s} \ 	 	\\ \hline
+				\ \textbf{x} \ 	& \ \textbf{y} \		& \ \textbf{Übertrag c} \ & \ \textbf{Summe s} \ 	 	\\ \hline
 				0 	& 0 		& 0          			& 0       			\\ \hline
 				0 	& 1 		& 0          			& 1       			\\ \hline
 				1 	& 0		& 0          			& 1      			 \\ \hline
@@ -215,10 +215,10 @@
 \newpage
 
 	\subsubsection{Volladdierer}
-		Der Volladdierer besteht aus zwei Halbaddierern und einem ODER. Da ein Volladdierer einen zusÃ¤tzlichen Eingang
-		($c_{in}$) hat, kann man mit ihm den Ãœbertrag aus einer vohergegangenen Addition mit in die Rechnung
-		einbeziehen. Man kann somit mehrere Volladdierer hintereinander schalten um grÃ¶ÃŸere Zahlen miteinander zu addieren.
-		Dabei verbindet man den Carry out Ausgang mit dem Carry in Ausgang des hÃ¶herwertigen Volladierers.\\
+		Der Volladdierer besteht aus zwei Halbaddierern und einem ODER. Da ein Volladdierer einen zusätzlichen Eingang
+		($c_{in}$) hat, kann man mit ihm den Übertrag aus einer vohergegangenen Addition mit in die Rechnung
+		einbeziehen. Man kann somit mehrere Volladdierer hintereinander schalten um größere Zahlen miteinander zu addieren.
+		Dabei verbindet man den Carry out Ausgang mit dem Carry in Ausgang des höherwertigen Volladierers.\\
 		Daraus ergibt sich die Wertetabelle \ref{tab:volladdierer}.
 
 
@@ -255,11 +255,11 @@
 \newpage
 
 	\subsection{Subtrahierer}
-		Beim Subtrahierer wird der Volladdierer durch einen Steuereingang erweitert. An diesem legt man fÃ¼r eine Addition eine
-		$0$, und fÃ¼r eine Subtraktion eine $1$ an. Diesen Steuereingang legt man, zusammen mit dem $y$-Eingang, an ein
-		Exklusiv-ODER (XOR). Der Ausgang dieses Exklusiv-ODERs wird an den ursprÃ¼nglichen $y$ Eingang angelegt. Somit wird
+		Beim Subtrahierer wird der Volladdierer durch einen Steuereingang erweitert. An diesem legt man für eine Addition eine
+		$0$, und für eine Subtraktion eine $1$ an. Diesen Steuereingang legt man, zusammen mit dem $y$-Eingang, an ein
+		Exklusiv-ODER (XOR). Der Ausgang dieses Exklusiv-ODERs wird an den ursprünglichen $y$ Eingang angelegt. Somit wird
 		der $y$ Wert, bei einer am Steuereingang anliegenden logischen $1$ negiert. Bei dem niederwertigsten Subtrahierer muss
-		zudem das Steuersignal auf den Carry in Eingang gelegt werden um die, fÃ¼r die Zweierkomplementrechnung benÃ¶tigte, 1
+		zudem das Steuersignal auf den Carry in Eingang gelegt werden um die, für die Zweierkomplementrechnung benötigte, 1
 		zu addieren. Zu sehen ist dieser Aufbau in Abbildung \ref{fig:steuerbarer_volladdierer}.
 
 		\begin{figure}[h]
@@ -274,12 +274,12 @@
 \newpage
 
 	\subsection{Addierwerk}
-		Das in Abbildung \ref{fig:Addierwerk} gezeigte Schaltnetz besteht aus acht kaskadierten Volladdierern. ZusÃ¤tzlich besitzen
+		Das in Abbildung \ref{fig:Addierwerk} gezeigte Schaltnetz besteht aus acht kaskadierten Volladdierern. Zusätzlich besitzen
 		sie jeweils einen Steuereingang, mit welchem der Summand, der aus den $y$ Bestandteilen aufgebaut ist, negiert werden
-		kann, sodass mit Schaltnetz auch Subtraktionen durchgefÃ¼hrt werden kÃ¶nnen.\\
-		Um eine Rechenoperation durchzufÃ¼hren muss man die Summanden $x$ und $y$ an die EingÃ¤nge $x_1$ bis $x_n$ und
-		$y_1$ bis $y_n$ anlegen. An die SteuereingÃ¤nge legt man eine logische $0$ fÃ¼r eine Addition, und eine logische $1$ fÃ¼r
-		eine Subtraktion an. Die Endsumme liegt an den AusgÃ¤ngen $z_1$ bis $z_n$ an.
+		kann, sodass mit Schaltnetz auch Subtraktionen durchgeführt werden können.\\
+		Um eine Rechenoperation durchzuführen muss man die Summanden $x$ und $y$ an die Eingänge $x_1$ bis $x_n$ und
+		$y_1$ bis $y_n$ anlegen. An die Steuereingänge legt man eine logische $0$ für eine Addition, und eine logische $1$ für
+		eine Subtraktion an. Die Endsumme liegt an den Ausgängen $z_1$ bis $z_n$ an.
 
 
 		\begin{figure}[h]
@@ -297,15 +297,15 @@
 	\subsection{Multiplizierer}
 		Der in Abbildung \ref{fig:Multiplizierer} gezeigte Multiplizierer kann zwei acht Bit Zahlen miteinander multiplizieren. Dazu 
 		legt man seine erste Zahl ($2.1 - 2.8$) an ein Schieberegister an, sodass die Zahl bei jedem Takt um eine Stelle verschoben 
-		werden kann. Dann wird pro Takt die hÃ¶chstwertigste Ziffer des Multiplikators abgegriffen, die anschlieÃŸend mit dem 
-		Multiplikant multipliziert wird. Da die abgegriffene Ziffer nur die ZustÃ¤nde  "`Null"' und  "`Eins"' annehmen kann, kann man 
-		die Multiplikation mit einfachen UND-VerknÃ¼pfungen realisieren. Um die Produkte auch Stellenrichtig addieren zu kÃ¶nnen 
-		muss man die Zwischenergebnisse ebenfalls pro Takt verschieben. Dies wird gelÃ¶ÃŸt indem man ein Register nimmt, 
+		werden kann. Dann wird pro Takt die höchstwertigste Ziffer des Multiplikators abgegriffen, die anschließend mit dem 
+		Multiplikant multipliziert wird. Da die abgegriffene Ziffer nur die Zustände  "`Null"' und  "`Eins"' annehmen kann, kann man 
+		die Multiplikation mit einfachen UND-Verknüpfungen realisieren. Um die Produkte auch Stellenrichtig addieren zu können 
+		muss man die Zwischenergebnisse ebenfalls pro Takt verschieben. Dies wird gelößt indem man ein Register nimmt, 
 		welches das Ergebniss um eine Stelle versetzt wieder auf den Addierer gibt. Der selben Aufbau aus Register und Addierer 
 		wird auch verwendet um die, aus dem ersten Addierer hinausgeschobenen, Stellen aufzufangen. Das Produkt kann man, 
-		nach acht Takten Rechenzeit, an den AusgÃ¤ngen der Addierer abgreifen. Da die Steuereinheit aus Abbildung 
-		\ref{fig:Steuereinheit_Multiplizierer} das Taktsignal einen Takt zu spÃ¤t stoppt, muss man das Ergebnis durch zwei teilen, 
-		indem man die Ziffern des Produktes jeweils an dem nÃ¤chst hÃ¶herwertigen Pin abgreift.\\
+		nach acht Takten Rechenzeit, an den Ausgängen der Addierer abgreifen. Da die Steuereinheit aus Abbildung 
+		\ref{fig:Steuereinheit_Multiplizierer} das Taktsignal einen Takt zu spät stoppt, muss man das Ergebnis durch zwei teilen, 
+		indem man die Ziffern des Produktes jeweils an dem nächst höherwertigen Pin abgreift.\\
 		 
 		
 		\begin{figure}[h]
@@ -316,13 +316,13 @@
 		\end{figure}
 
 		\noindent
-		Die in Abbildung \ref{fig:Steuereinheit_Multiplizierer} sichtbare Steuereinheit des 8-Bit Multiplizierers ist dafÃ¼r 
+		Die in Abbildung \ref{fig:Steuereinheit_Multiplizierer} sichtbare Steuereinheit des 8-Bit Multiplizierers ist dafür 
 		verantwortlich, dass der Takt "`ClMult"' am Anfang er Rechenoperation gestartet, und nach acht Takten wieder gestoppt 
-		wird. Wenn $D_{0}$ nach einem Reset $1$ ist, wird das ladbare Schieberegister geladen. Ist zusÃ¤tzlich dazu 
-		noch der Taster "`* "' gedrÃ¼ckt, wird der Ausgang \={Q} des  Flip-Flops  $0$, sodass der Main-Clock auch der Clock des 
-		Multiplizierers wird. Acht Takte spÃ¤ter, wenn der Ausgang $D_{8}$ $1$ ist, wird der Reseteingang des Flip-Flops 
+		wird. Wenn $D_{0}$ nach einem Reset $1$ ist, wird das ladbare Schieberegister geladen. Ist zusätzlich dazu 
+		noch der Taster "`* "' gedrückt, wird der Ausgang \={Q} des  Flip-Flops  $0$, sodass der Main-Clock auch der Clock des 
+		Multiplizierers wird. Acht Takte später, wenn der Ausgang $D_{8}$ $1$ ist, wird der Reseteingang des Flip-Flops 
 		$1$, sodass \={Q}  wieder 1 ist und der Takt blockiert wird. So wird der Multiplizierer gestoppt, sodass das Produkt an den
-		AusgÃ¤ngen ErBin1 bis ErBin14 abgelesen werden kann. 
+		Ausgängen ErBin1 bis ErBin14 abgelesen werden kann. 
 
 		\begin{figure}[h]
 			\center
@@ -344,14 +344,14 @@
 		\FloatBarrier
 		
 		\noindent
-		Die digitale Eingabe des Rechenwerks erfolgt Ã¼ber ein ASCII-Eingabe Feld. Dabei liegt an den AusgÃ¤ngen $D_{0}$ 
-		bis $D_{3}$ die zuletzt eingegebene Ziffer im BinÃ¤rcode an da, durch das weglassen der oberen vier Bit im 
+		Die digitale Eingabe des Rechenwerks erfolgt über ein ASCII-Eingabe Feld. Dabei liegt an den Ausgängen $D_{0}$ 
+		bis $D_{3}$ die zuletzt eingegebene Ziffer im Binärcode an da, durch das weglassen der oberen vier Bit im 
 		ASCII-Code die Ziffern null bis neun automatisch im BCD-Code anliegen. Der Ausgang CLK ist dann HIGH solange eine Taste 
-		gedrÃ¼ckt wird. Dieser CLK Ausgang wird auf den Clock-Eingang der zwei nachfolgenden Register gelegt. Sobald eine Taste 
-		gedrÃ¼ckt wurde, wird die zuletzt eingegebene Ziffer, mit fallender Flanke, in das erste Register Ã¼bernommen. Folgt ein 
-		weiterer Tastendruck wird, wieder mit fallender Flanke, die erste Ziffer in das zweite Register Ã¼bernommen, die 
-		niederwertigere Ziffer in das erste Register Ã¼bernommen. Die eingegebene Zahl kann man dann an den RegisterausgÃ¤ngen 
-		BCD1.1 bis BCD1.8 ablesen. Um zwei Operanden eingeben zu kÃ¶nnen, muss die Schaltung aus Abbildung \ref{fig:bcd_eingabe} 
+		gedrückt wird. Dieser CLK Ausgang wird auf den Clock-Eingang der zwei nachfolgenden Register gelegt. Sobald eine Taste 
+		gedrückt wurde, wird die zuletzt eingegebene Ziffer, mit fallender Flanke, in das erste Register übernommen. Folgt ein 
+		weiterer Tastendruck wird, wieder mit fallender Flanke, die erste Ziffer in das zweite Register übernommen, die 
+		niederwertigere Ziffer in das erste Register übernommen. Die eingegebene Zahl kann man dann an den Registerausgängen 
+		BCD1.1 bis BCD1.8 ablesen. Um zwei Operanden eingeben zu können, muss die Schaltung aus Abbildung \ref{fig:bcd_eingabe} 
 		doppelt vorhanden sein.
 
 
@@ -362,27 +362,27 @@
 		\begin{figure}[h]
 			\center
 			\includegraphics[width=1.0\textwidth]{wandler_dezimal_binaer}
-			\caption{Wandler von BCD zu BinÃ¤r}
+			\caption{Wandler von BCD zu Binär}
 			\label{fig:wandler_dezimal_binaer}
 		\end{figure}
 	
 	\noindent	
-	Da das Rechenwerk mit binÃ¤ren Zahlen rechnet muss man die eingegebenen BCD-Zahlen in BinÃ¤r-Zahlen wandeln. Da 
-	die heutzutage Ã¼blicherweise Verwendete Konvertierung sehr komplex ist, habe ich fÃ¼r meine GFS eine simplere 
-	Methode gewÃ¤hlt. Diese Variante ist nur Effektiv bei kleineren Zahlenbereichen, da die Anzahl benÃ¶tigter Takte 
+	Da das Rechenwerk mit binären Zahlen rechnet muss man die eingegebenen BCD-Zahlen in Binär-Zahlen wandeln. Da 
+	die heutzutage üblicherweise Verwendete Konvertierung sehr komplex ist, habe ich für meine GFS eine simplere 
+	Methode gewählt. Diese Variante ist nur Effektiv bei kleineren Zahlenbereichen, da die Anzahl benötigter Takte 
 	genau so hoch ist, wie die Zahl selber. Bei einer Frequnez von, z.B 500Hz braucht die Wandlung der Zahl 100 nur 
-	0.2$s$, die Wandlung der Zahl 10.000 hingegen schon 20$s$. Bei dem Rechenbeispiel mit den hÃ¶chstmÃ¶glichsten 
+	0.2$s$, die Wandlung der Zahl 10.000 hingegen schon 20$s$. Bei dem Rechenbeispiel mit den höchstmöglichsten 
 	Operanden $(99 \cdot 99 = 9.801)$ braucht die eigentliche Rechnung nur 8 Takte, die Wandlung hingegen 9.801 
-	Takte. Bei einem angelegten Takt von 500Hz betrÃ¤gt die eigentliche Rechenzeit, der Multiplikation, 0,016$s$, die Wandlung 
-	hingegen benÃ¶tigt 19.602$s$.\\
-	FÃ¼r die Wandlung werden zwei ZÃ¤hler und ein Vergleicher benÃ¶tigt. Der erste ZÃ¤hler ist dabei ein BCD-ZÃ¤hler, der
-	zweite ein BinÃ¤rzÃ¤hler. Dabei ist es wichtig dass die beiden ZÃ¤hler im gleichen Takt zÃ¤hlen. Der Vergleicher 
-	vergleicht das Eingabesignal mit dem Ausgang des BCD-ZÃ¤hlers. Sind diese beiden Signale identisch so wird der
-	Takt unterbrochen und somit werden beide ZÃ¤hler gestoppt. Da sie im Gleichen Takt zÃ¤hlen, und auch den selben 
-	Reset besitzen, kann man nun das Ergebniss binÃ¤r an den AusgÃ¤ngen des zweiten ZÃ¤hlers ablesen.\\
-	FÃ¼r die Wandlung von binÃ¤r zu BCD kann man das selbe Prinzip anwenden, man muss allerdings die beiden ZÃ¤hler
-	tauschen, sodass das binÃ¤r-Ergebniss mit dem binÃ¤r-ZÃ¤hler verglichen wird, und man dass Endergebniss an den 
-	AusgÃ¤ngen des DezimalzÃ¤hlers ablesen kann.
+	Takte. Bei einem angelegten Takt von 500Hz beträgt die eigentliche Rechenzeit, der Multiplikation, 0,016$s$, die Wandlung 
+	hingegen benötigt 19.602$s$.\\
+	Für die Wandlung werden zwei Zähler und ein Vergleicher benötigt. Der erste Zähler ist dabei ein BCD-Zähler, der
+	zweite ein Binärzähler. Dabei ist es wichtig dass die beiden Zähler im gleichen Takt zählen. Der Vergleicher 
+	vergleicht das Eingabesignal mit dem Ausgang des BCD-Zählers. Sind diese beiden Signale identisch so wird der
+	Takt unterbrochen und somit werden beide Zähler gestoppt. Da sie im Gleichen Takt zählen, und auch den selben 
+	Reset besitzen, kann man nun das Ergebniss binär an den Ausgängen des zweiten Zählers ablesen.\\
+	Für die Wandlung von binär zu BCD kann man das selbe Prinzip anwenden, man muss allerdings die beiden Zähler
+	tauschen, sodass das binär-Ergebniss mit dem binär-Zähler verglichen wird, und man dass Endergebniss an den 
+	Ausgängen des Dezimalzählers ablesen kann.
 
 
 \newpage
@@ -397,8 +397,8 @@
 		
 	
 	\noindent	
-	Um das Endergebniss anzuzeigen wird es, BCD-Codiert, Ziffer fÃ¼r Ziffer auf die EingÃ¤nge eines 
-	7-Segment-Wandlers gelegt, seine AusgÃ¤nge gehen wiederum auf jeweils ein 7-Segment Anzeigeelement.
+	Um das Endergebniss anzuzeigen wird es, BCD-Codiert, Ziffer für Ziffer auf die Eingänge eines 
+	7-Segment-Wandlers gelegt, seine Ausgänge gehen wiederum auf jeweils ein 7-Segment Anzeigeelement.
 
 
 

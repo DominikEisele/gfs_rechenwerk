@@ -1,4 +1,3 @@
-
 \documentclass{beamer}
 \setbeamertemplate{navigation symbols}{}
 
@@ -25,14 +24,14 @@
 \section{Rechnen mit dualen Zahlen} 
 \begin{frame}
 	\frametitle{Rechnen mit dualen Zahlen} 
-	Das Rechnen mit Dualzahlen verlÃ¤uft nach den selben Rechenregeln wie das Rechnen mit Dezimalzahlen.
+	Das Rechnen mit Dualzahlen verläuft nach den selben Rechenregeln wie das Rechnen mit Dezimalzahlen.
 \end{frame}
 
 
 \subsection{Addition von Dualzahlen}
 \begin{frame} 		
 	\frametitle{Addition von Dualzahlen}
-	Rechenbeispiel fÃ¼r eine Addition mit Dual-Zahlen.
+	Rechenbeispiel für eine Addition mit Dual-Zahlen.
 	\begin{center}
 		\begin{tabular}{crcl}
 				&		 	       	 1 1 1 0 1 0 0 1 0 		 	  	\\
@@ -48,7 +47,7 @@
 \subsection{Subtraktion von Dualzahlen}
 \begin{frame} 		
 	\frametitle{Subtraktion von Dualzahlen}
-	Rechenbeispiel fÃ¼r eine Subtraktion mit Dual-Zahlen.
+	Rechenbeispiel für eine Subtraktion mit Dual-Zahlen.
 	\begin{center}
 		\begin{tabular}{crcl}
 				&		 	       	  1 1 1 0 1 0 0 1 0 		 	  	\\
@@ -62,7 +61,7 @@
 \subsection{Subtraktion mit Hilfe des Zweierkomplements}
 \begin{frame} 		
 	\frametitle{Subtraktion mit Hilfe des Zweierkomplements}
-	Da, in der Digitaltechnik, fÃ¼r die Subtraktion von Dualzahlen keine logische VerknÃ¼pfung existiert, ist man gezwungen eine
+	Da, in der Digitaltechnik, für die Subtraktion von Dualzahlen keine logische Verknüpfung existiert, ist man gezwungen eine
 	Subtraktion in eine Addition umwandeln. \pause
 		\[ \begin{array}{rcl}
    				 2 - 6       & = & (-4)			\\ \pause 
@@ -76,7 +75,7 @@
 		\hspace*{5mm} $ \underline{2 - 6 = \, ? }$ \\ \pause 
 		1. Schritt: In eine Dualzahl wandeln:\\  
 		\hspace*{5mm}  $ 2 - 6 \Rightarrow 10 - 110$\\ \pause
-		2. Schritt: Stellen auffÃ¼llen:\\ 
+		2. Schritt: Stellen auffüllen:\\ 
 		\hspace*{5mm} $ 0010 - 0110 =$ $ ? $\\\pause 
 		3. Schritt: Bits negieren:\\
 		\hspace*{5mm} $ 0110 \Rightarrow 1001$\\ \pause 
@@ -92,7 +91,7 @@
 		7. Schritt: Hinzuaddieren von 1:\\
 		\hspace*{5mm} $ 011 + 001 = 100$\\ \pause 
 		8. Schritt: In eine Dezimalzahl wandeln:\\ 
-		\hspace*{5mm} $ 100 \Rightarrow 4$ ; da das hÃ¶chstwertige Bit 1 ist: Endergebnis $=$ $ -4$\\
+		\hspace*{5mm} $ 100 \Rightarrow 4$ ; da das höchstwertige Bit 1 ist: Endergebnis $=$ $ -4$\\
 		9. Schritt: Ergebniss:\\ 
 		\hspace*{5mm} $ \underline{2 - 6 = \, (-4) }$
 \end{frame}
@@ -101,16 +100,16 @@
 \subsection{Multiplikation von Dualzahlen}
 \begin{frame} 		
 	\frametitle{Multiplikation von Dualzahlen}
-	Bei der binÃ¤ren Multiplikation werden Produkte mit den einzelnen Stellen des Multiplikators gebildet und anschlieÃŸend
+	Bei der binären Multiplikation werden Produkte mit den einzelnen Stellen des Multiplikators gebildet und anschließend
 	Stellenrichtig addiert. \\
-	Da die Stellen des Multiplikators nur die Zahlenwerte Null und Eins annehmen kÃ¶nnen, muss der 
-	Multiplikand nur mit Null und Eins multipliziert werden. Dies kann mit einer einfachen UND-VerknÃ¼pfung gelÃ¶ÃŸt werden.
+	Da die Stellen des Multiplikators nur die Zahlenwerte Null und Eins annehmen können, muss der 
+	Multiplikand nur mit Null und Eins multipliziert werden. Dies kann mit einer einfachen UND-Verknüpfung gelößt werden.
 \end{frame}
 
 
 \begin{frame} 		
 	\frametitle{Multiplikation von Dualzahlen}
-	Rechenbeispiel fÃ¼r eine Multiplikation mit Dual-Zahlen.
+	Rechenbeispiel für eine Multiplikation mit Dual-Zahlen.
 	\begin{center}
 		\begin{tabular}{crcl}
 				&		 	       	  1 0 1 1 $\times$ 1 0 1 0	 	  	\\ \hline
@@ -132,9 +131,9 @@
 %	\frametitle{Halbaddierer}
 %	\begin{columns}
 %		\begin{column}{5cm}
-%			Ein Halbaddierer besitzt zwei Ein-, und zwei AusgÃ¤nge. An die EingÃ¤nge \emph{x} und \emph{y} werden jeweils 
-%			die Ziffern angelegt die man addieren mÃ¶chte. An dem ersten Ausgang liegt die Summe $s$ der Addition an, am 
-%			zweiten Ausgang der Ãœbertrag $c$.
+%			Ein Halbaddierer besitzt zwei Ein-, und zwei Ausgänge. An die Eingänge \emph{x} und \emph{y} werden jeweils 
+%			die Ziffern angelegt die man addieren möchte. An dem ersten Ausgang liegt die Summe $s$ der Addition an, am 
+%			zweiten Ausgang der Übertrag $c$.
 %			\end{column}
 %	\begin{column}{5cm}
 %	
