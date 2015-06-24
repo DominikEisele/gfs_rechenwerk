@@ -1,0 +1,263 @@
+
+\documentclass{beamer}
+\setbeamertemplate{navigation symbols}{}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[UTF8]{inputenc}
+\usetheme{Warsaw}
+\usepackage{ngerman}
+\beamersetuncovermixins{\opaqueness<1>{25}}{\opaqueness<2->{15}}
+\begin{document}
+\title{Digitales Rechenwerk}  
+\author{Dominik Eisele}
+\date{\today} 
+
+\begin{frame}
+	\titlepage
+\end{frame} 
+
+\begin{frame}
+	\frametitle{Inhaltsverzeichnis}\tableofcontents
+\end{frame} 
+
+
+\section{Rechnen mit dualen Zahlen} 
+\begin{frame}
+	\frametitle{Rechnen mit dualen Zahlen} 
+	Das Rechnen mit Dualzahlen verläuft nach den selben Rechenregeln wie das Rechnen mit Dezimalzahlen.
+\end{frame}
+
+
+\subsection{Addition von Dualzahlen}
+\begin{frame} 		
+	\frametitle{Addition von Dualzahlen}
+	Rechenbeispiel für eine Addition mit Dual-Zahlen.
+	\begin{center}
+		\begin{tabular}{crcl}
+				&		 	       	 1 1 1 0 1 0 0 1 0 		 	  	\\
+		 +  		&				 0 0 1 1 1 0 1 0 0			  	\\\hline
+				&			      1 0 0 1 0 0 0 1 1 0			  
+		\end{tabular}
+	\end{center}
+\end{frame}
+
+
+
+
+\subsection{Subtraktion von Dualzahlen}
+\begin{frame} 		
+	\frametitle{Subtraktion von Dualzahlen}
+	Rechenbeispiel für eine Subtraktion mit Dual-Zahlen.
+	\begin{center}
+		\begin{tabular}{crcl}
+				&		 	       	  1 1 1 0 1 0 0 1 0 		 	  	\\
+		 -  		&				  0 0 1 1 1 0 1 0 0			  	\\\hline
+				&			          1 0 1 0 1 1 1 1 0			  
+		\end{tabular}
+	\end{center}
+\end{frame}
+
+
+\subsection{Subtraktion mit Hilfe des Zweierkomplements}
+\begin{frame} 		
+	\frametitle{Subtraktion mit Hilfe des Zweierkomplements}
+	Da, in der Digitaltechnik, für die Subtraktion von Dualzahlen keine logische Verknüpfung existiert, ist man gezwungen eine
+	Subtraktion in eine Addition umwandeln. \pause
+		\[ \begin{array}{rcl}
+   				 2 - 6       & = & (-4)			\\ \pause 
+  			         2 + (-6)   & = & (-4)
+		\end{array} \]
+\end{frame}
+
+
+\begin{frame} 		
+	\frametitle{Subtraktion mit Hilfe des Zweierkomplements}
+		\hspace*{5mm} $ \underline{2 - 6 = \, ? }$ \\ \pause 
+		1. Schritt: In eine Dualzahl wandeln:\\  
+		\hspace*{5mm}  $ 2 - 6 \Rightarrow 10 - 110$\\ \pause
+		2. Schritt: Stellen auffüllen:\\ 
+		\hspace*{5mm} $ 0010 - 0110 =$ $ ? $\\\pause 
+		3. Schritt: Bits negieren:\\
+		\hspace*{5mm} $ 0110 \Rightarrow 1001$\\ \pause 
+		4. Schritt: Hinzuaddieren von 1:\\ 
+		\hspace*{5mm} $ 1001 + 0001 = 1010$\\ \pause
+		5. Schritt: Minuend und Zweierkomplement addieren:\\ 
+		\hspace*{5mm} $ 0010 + 1010 = 1100$\\ \pause
+		6. Schritt: Ergebnis negieren:\\ 
+		\hspace*{5mm} $ 100 \Rightarrow 011$\\ 
+		\end{frame}
+\begin{frame} 		
+	\frametitle{Subtraktion mit Hilfe des Zweierkomplements}
+		7. Schritt: Hinzuaddieren von 1:\\
+		\hspace*{5mm} $ 011 + 001 = 100$\\ \pause 
+		8. Schritt: In eine Dezimalzahl wandeln:\\ 
+		\hspace*{5mm} $ 100 \Rightarrow 4$ ; da das höchstwertige Bit 1 ist: Endergebnis $=$ $ -4$\\
+		9. Schritt: Ergebniss:\\ 
+		\hspace*{5mm} $ \underline{2 - 6 = \, (-4) }$
+\end{frame}
+
+
+\subsection{Multiplikation von Dualzahlen}
+\begin{frame} 		
+	\frametitle{Multiplikation von Dualzahlen}
+	Bei der binären Multiplikation werden Produkte mit den einzelnen Stellen des Multiplikators gebildet und anschließend
+	Stellenrichtig addiert. \\
+	Da die Stellen des Multiplikators nur die Zahlenwerte Null und Eins annehmen können, muss der 
+	Multiplikand nur mit Null und Eins multipliziert werden. Dies kann mit einer einfachen UND-Verknüpfung gelößt werden.
+\end{frame}
+
+
+\begin{frame} 		
+	\frametitle{Multiplikation von Dualzahlen}
+	Rechenbeispiel für eine Multiplikation mit Dual-Zahlen.
+	\begin{center}
+		\begin{tabular}{crcl}
+				&		 	       	  1 0 1 1 $\times$ 1 0 1 0	 	  	\\ \hline
+				&							1011000			\\
+				&							000000			\\
+				&							10110			\\
+		 +		&							0000			  	\\ \hline
+				&						        1101110		  
+		\end{tabular}
+	\end{center}
+\end{frame}
+
+
+
+%\section{Umsetzung in eine digitale Rechenschaltung} 
+%\subsection{Addierer}
+%\subsubsection{Halbaddierer}
+%\begin{frame}
+%	\frametitle{Halbaddierer}
+%	\begin{columns}
+%		\begin{column}{5cm}
+%			Ein Halbaddierer besitzt zwei Ein-, und zwei Ausgänge. An die Eingänge \emph{x} und \emph{y} werden jeweils 
+%			die Ziffern angelegt die man addieren möchte. An dem ersten Ausgang liegt die Summe $s$ der Addition an, am 
+%			zweiten Ausgang der Übertrag $c$.
+%			\end{column}
+%	\begin{column}{5cm}
+%	
+%	\begin{tabular}{|c|c|}
+%		\hline
+%		\textbf{Kursleiter} & \textbf{Titel} \\
+%		\hline
+%		Sascha Frank &  \LaTeX \ Kurs 1 \\
+%		\hline	
+%		Sascha Frank & \LaTeX \ Kursreihe \\
+%		\hline
+%	\end{tabular}
+%\end{frame}
+
+
+
+
+
+
+\begin{frame}\frametitle{Aufz\"ahlung mit Pausen}
+\begin{itemize}
+\item  Einf\"uhrungskurs in \LaTeX 
+\item  Kurs 2 \pause 
+\item  Seminararbeiten und Pr\"asentationen mit \LaTeX \pause 
+\item  Die Beamerclass
+\end{itemize} 
+\end{frame}
+
+\subsection{Listen II}
+\begin{frame}\frametitle{Numerierte Liste}
+\begin{enumerate}
+\item  Einf\"uhrungskurs in \LaTeX 
+\item  Kurs 2
+\item  Seminararbeiten und Pr\"asentationen mit \LaTeX 
+\item  Die Beamerclass
+\end{enumerate}
+\end{frame}
+\begin{frame}\frametitle{Numerierte Liste mit Pausen}
+\begin{enumerate}
+\item  Einf\"uhrungskurs in \LaTeX \pause 
+\item  Kurs 2 \pause 
+\item  Seminararbeiten und Pr\"asentationen mit \LaTeX \pause 
+\item  Die Beamerclass
+\end{enumerate}
+\end{frame}
+
+\section{Abschnitt Nr.3} 
+\subsection{Tabellen}
+\begin{frame}\frametitle{Tabellen}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Zeitpunkt} & \textbf{Kursleiter} & \textbf{Titel} \\
+\hline
+WS 04/05 & Sascha Frank &  Erste Schritte mit \LaTeX  \\
+\hline
+SS 05 & Sascha Frank & \LaTeX \ Kursreihe \\
+\hline
+\end{tabular}
+\end{frame}
+
+
+\begin{frame}\frametitle{Tabellen mit Pause}
+\begin{tabular}{c c c}
+A & B & C \\ 
+\pause 
+1 & 2 & 3 \\  
+\pause 
+A & B & C \\ 
+\end{tabular} 
+\end{frame}
+
+
+\section{Abschnitt Nr. 4}
+\subsection{Bl\"ocke}
+\begin{frame}\frametitle{Bl\"ocke}
+
+\begin{block}{Blocktitel}
+Blocktext 
+\end{block}
+
+\begin{exampleblock}{Blocktitel}
+Blocktext 
+\end{exampleblock}
+
+
+\begin{alertblock}{Blocktitel}
+Blocktext 
+\end{alertblock}
+\end{frame}
+
+\section{Abschnitt Nr. 5}
+\subsection{Geteilter Bildschirm}
+
+\begin{frame}\frametitle{Zerteilen des Bildschirmes}
+\begin{columns}
+\begin{column}{5cm}
+\begin{itemize}
+\item Beamer 
+\item Beamer Class 
+\item Beamer Class Latex 
+\end{itemize}
+\end{column}
+\begin{column}{5cm}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Kursleiter} & \textbf{Titel} \\
+\hline
+Sascha Frank &  \LaTeX \ Kurs 1 \\
+\hline
+Sascha Frank & \LaTeX \ Kursreihe \\
+\hline
+\end{tabular}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+\end{document}

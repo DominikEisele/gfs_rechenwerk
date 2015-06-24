@@ -26,7 +26,7 @@
 \setlength{\headheight}{15pt}
 \pagestyle{fancy}
 \fancyfoot[C]{Seite \thepage{} von \pageref{LastPage}}
-\linespread{1.5}
+\linespread{1.7}
 \author{Dominik Eisele}
 \title{Dokumentation zur GFS "`Digitales Rechenwerk"'}
 \date{\today}
@@ -41,7 +41,7 @@
 \setlength{\tabcolsep}{0pt}
 \renewcommand{\arraystretch}{1}
 
-\renewcommand*\contentsname{Gliederung}
+%\renewcommand*\contentsname{Gliederung}
 
 \let\oldsqrt\sqrt
 \def\sqrt{\mathpalette\DHLhksqrt}
@@ -190,11 +190,11 @@
 		\begin{table}[h]
 			\center
 			\begin{tabular}{c|c|c|c}
-				\ \textbf{x} \ 	& \ \textbf{y} \ 	& \ \textbf{Übertrag c} \ & \ \textbf{Summe s} \ 	 	\\ \hline
-				0 	& 0 		& 0          		& 0       			\\ \hline
-				0 	& 1 		& 0          		& 1       			\\ \hline
-				1 	& 0		& 0          		& 1      			 \\ \hline
-				1	& 1 		& 1          		& 0      			 \\
+				\ \textbf{x} \ 	& \ \textbf{y} \		& \ \textbf{Übertrag c} \ & \ \textbf{Summe s} \ 	 	\\ \hline
+				0 	& 0 		& 0          			& 0       			\\ \hline
+				0 	& 1 		& 0          			& 1       			\\ \hline
+				1 	& 0		& 0          			& 1      			 \\ \hline
+				1	& 1 		& 1          			& 0      			 \\
 			\end{tabular}
 			\caption{Wertetabelle Halbddierer}
 			\label{tab:halbaddierer}
@@ -216,7 +216,7 @@
 
 	\subsubsection{Volladdierer}
 		Der Volladdierer besteht aus zwei Halbaddierern und einem ODER. Da ein Volladdierer einen zusätzlichen Eingang
-		(c\textsubscript{in}) hat, kann man mit ihm den Übertrag aus einer vohergegangenen Addition mit in die Rechnung
+		($c_{in}$) hat, kann man mit ihm den Übertrag aus einer vohergegangenen Addition mit in die Rechnung
 		einbeziehen. Man kann somit mehrere Volladdierer hintereinander schalten um größere Zahlen miteinander zu addieren.
 		Dabei verbindet man den Carry out Ausgang mit dem Carry in Ausgang des höherwertigen Volladierers.\\
 		Daraus ergibt sich die Wertetabelle \ref{tab:volladdierer}.
@@ -256,7 +256,7 @@
 
 	\subsection{Subtrahierer}
 		Beim Subtrahierer wird der Volladdierer durch einen Steuereingang erweitert. An diesem legt man für eine Addition eine
-		$0$, und für eine Subtraktion eine $1$ an. Diesen Steuereingang legt man, zusammen mit dem y-Eingang, an ein
+		$0$, und für eine Subtraktion eine $1$ an. Diesen Steuereingang legt man, zusammen mit dem $y$-Eingang, an ein
 		Exklusiv-ODER (XOR). Der Ausgang dieses Exklusiv-ODERs wird an den ursprünglichen $y$ Eingang angelegt. Somit wird
 		der $y$ Wert, bei einer am Steuereingang anliegenden logischen $1$ negiert. Bei dem niederwertigsten Subtrahierer muss
 		zudem das Steuersignal auf den Carry in Eingang gelegt werden um die, für die Zweierkomplementrechnung benötigte, 1
@@ -315,39 +315,37 @@
 			\label{fig:Steuereinheit_Multiplizierer}
 		\end{figure}
 
+		\noindent
 		Die in Abbildung \ref{fig:Steuereinheit_Multiplizierer} sichtbare Steuereinheit des 8-Bit Multiplizierers ist dafür 
 		verantwortlich, dass der Takt "`ClMult"' am Anfang er Rechenoperation gestartet, und nach acht Takten wieder gestoppt 
-		wird. Wenn D\textsubscript{0} nach einem Reset $1$ ist, wird das ladbare Schieberegister geladen. Ist zusätzlich dazu 
+		wird. Wenn $D_{0}$ nach einem Reset $1$ ist, wird das ladbare Schieberegister geladen. Ist zusätzlich dazu 
 		noch der Taster "`* "' gedrückt, wird der Ausgang \={Q} des  Flip-Flops  $0$, sodass der Main-Clock auch der Clock des 
-		Multiplizierers wird. Acht Takte später, wenn der Ausgang D\textsubscript{8} $1$ ist, wird der Reseteingang des Flip-Flops 
+		Multiplizierers wird. Acht Takte später, wenn der Ausgang $D_{8}$ $1$ ist, wird der Reseteingang des Flip-Flops 
 		$1$, sodass \={Q}  wieder 1 ist und der Takt blockiert wird. So wird der Multiplizierer gestoppt, sodass das Produkt an den
 		Ausgängen ErBin1 bis ErBin14 abgelesen werden kann. 
 
 		\begin{figure}[h]
 			\center
-			\includegraphics[width=0.7\textwidth]{multiplizierer}
+			\includegraphics[width=0.9\textwidth]{multiplizierer}
 			\caption{8-Bit Multiplizierer}
 			\label{fig:Multiplizierer}
 		\end{figure}
 		\FloatBarrier
 
-\newpage
-	$  $
-	\FloatBarrier
 
 \newpage
 	\subsection{BCD-Eingabe}
 		\begin{figure}[h]
 			\center
-			\includegraphics[width=0.8\textwidth]{bcd_eingabe}
+			\includegraphics[width=1.0\textwidth]{bcd_eingabe}
 			\caption{BCD-Eingabe}
 			\label{fig:bcd_eingabe}
 		\end{figure}
 		\FloatBarrier
 		
 		\noindent
-		Die digitale Eingabe des Rechenwerks erfolgt über ein ASCII-Eingabe Feld. Dabei liegt an den Ausgängen D\textsubscript{0} 
-		bis D\textsubscript{3} die zuletzt eingegebene Ziffer im Binärcode an da, durch das weglassen der oberen vier Bit im 
+		Die digitale Eingabe des Rechenwerks erfolgt über ein ASCII-Eingabe Feld. Dabei liegt an den Ausgängen $D_{0}$ 
+		bis $D_{3}$ die zuletzt eingegebene Ziffer im Binärcode an da, durch das weglassen der oberen vier Bit im 
 		ASCII-Code die Ziffern null bis neun automatisch im BCD-Code anliegen. Der Ausgang CLK ist dann HIGH solange eine Taste 
 		gedrückt wird. Dieser CLK Ausgang wird auf den Clock-Eingang der zwei nachfolgenden Register gelegt. Sobald eine Taste 
 		gedrückt wurde, wird die zuletzt eingegebene Ziffer, mit fallender Flanke, in das erste Register übernommen. Folgt ein 
@@ -379,9 +377,9 @@
 	hingegen benötigt 19.602$s$.\\
 	Für die Wandlung werden zwei Zähler und ein Vergleicher benötigt. Der erste Zähler ist dabei ein BCD-Zähler, der
 	zweite ein Binärzähler. Dabei ist es wichtig dass die beiden Zähler im gleichen Takt zählen. Der Vergleicher 
-	vergleicht das Eingabe Signal mit dem Ausgang des BCD-Zählers. Sind diese beiden Signale identisch so wird der
+	vergleicht das Eingabesignal mit dem Ausgang des BCD-Zählers. Sind diese beiden Signale identisch so wird der
 	Takt unterbrochen und somit werden beide Zähler gestoppt. Da sie im Gleichen Takt zählen, und auch den selben 
-	Reset besitzen, kann man nun das binär-Ergebniss an den Ausgängen des zweiten Zählers ablesen.\\
+	Reset besitzen, kann man nun das Ergebniss binär an den Ausgängen des zweiten Zählers ablesen.\\
 	Für die Wandlung von binär zu BCD kann man das selbe Prinzip anwenden, man muss allerdings die beiden Zähler
 	tauschen, sodass das binär-Ergebniss mit dem binär-Zähler verglichen wird, und man dass Endergebniss an den 
 	Ausgängen des Dezimalzählers ablesen kann.
